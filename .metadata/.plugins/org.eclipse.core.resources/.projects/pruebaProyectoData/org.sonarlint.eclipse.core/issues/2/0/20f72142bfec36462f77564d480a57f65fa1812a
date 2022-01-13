@@ -1,0 +1,9 @@
+
+p
+java:S1128"=Remove this unused import 'javax.validation.constraints.Min'.(ã¤½8ÕëñæÜ/H¦-RMINORZ
+CODE_SMELL
+i
+java:S1128"7Remove this unused import 'javax.annotation.Generated'.(­¦êQ8ÕëñæÜ/H¤-RMINORZ
+CODE_SMELL
+n	java:S125"<This block of commented-out lines of code should be removed.(ö¥¿Î8ÕëñæÜ/H¨-RMAJORZ
+CODE_SMELL

@@ -1,0 +1,11 @@
+
+^
+java:S1611"2Remove the parentheses around the "args" parameter(£Ù€òH©-RMINORZ
+CODE_SMELL
+b
+java:S1611;"/Remove the parentheses around the "i" parameter(¨ıØÒ8ğÏº¼İ/Hª-RMINORZ
+CODE_SMELL
+s	java:S125+"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8ğÏº¼İ/H«-RMAJORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(µ’Ø¾şÿÿÿÿ8ğÏº¼İ/H¬-RMAJORZ
+CODE_SMELL

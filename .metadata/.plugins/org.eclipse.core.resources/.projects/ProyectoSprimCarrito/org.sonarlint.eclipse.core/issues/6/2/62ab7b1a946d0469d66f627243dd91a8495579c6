@@ -1,0 +1,23 @@
+
+T	java:S1086")Either remove or fill this block of code.(üÅÖşH·]RMAJORZ
+CODE_SMELL
+a
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8È˜´¿Û/H¸]RMINORZ
+CODE_SMELL
+n
+java:S1128";Remove this unused import 'com.example.demo.model.Usuario'.(í‘’û8È˜´¿Û/Hº]RMINORZ
+CODE_SMELL
+f
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8È˜´¿Û/H¼]RMINORZ
+CODE_SMELL
+g
+java:S3740O"/Provide the parametrized type for this generic.(Óñ®½şÿÿÿÿ8”‘‡œÛ/H¾]RMAJORZ
+CODE_SMELL
+S
+java:S11256"'Remove the unnecessary boolean literal.(üÅÖşH¿]RMINORZ
+CODE_SMELL
+	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ôİ´øÿÿÿÿHÂ]RMINORZ
+CODE_SMELL
+g
+java:S3740@"/Provide the parametrized type for this generic.(Óñ®½şÿÿÿÿ8Ï ‚œÛ/HÃ]RMAJORZ
+CODE_SMELL

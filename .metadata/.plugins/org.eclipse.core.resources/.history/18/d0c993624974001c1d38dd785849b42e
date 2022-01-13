@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Pedido;
+import com.example.demo.model.Producto;
+
+public interface Ped_Prod_Cantida {
+	public void init();
+	public Ped_Prod_Cantida add(Pedido pedido, Producto producto, int cantidad);
+	public Ped_Prod_Cantida borrar(Pedido pedido, Producto producto, int cantidad);
+	public Ped_Prod_Cantida modificar(Pedido pedido, Producto producto, int cantidad);
+	
+}

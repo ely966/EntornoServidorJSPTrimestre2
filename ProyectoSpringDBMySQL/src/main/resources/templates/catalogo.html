@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>AddPedido</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link type="text/css" href="/styles/css/estilos.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="formulario">
+	<h1>Add pedido</h1>
+	<table>
+		<tr>
+	   		<td>Id</td>
+	   		<td>NombreProducto</td>
+	   		<td>Precio</td>
+	   		<td>Cantidad</td>
+	   	</tr>
+	   	<form th:action="@{/pedido/add/subm}" 
+	   		 method="post">
+	   		<tr th:each="produ : ${catalogo}">
+	   			<td>
+					<input type="hidden" th:text="${produ.id}" th.value="${produ.id}" th.name="id" th.id="id" /> 
+	   			</td>
+	   			<td>
+	   				<input type="hidden" th:text="${produ.nombre}" th.value="${produ.nombre}" th.name="nombre" th.id="nombre"/>
+	   			</td>
+	   			<td>
+	   				<input type="hidden" th:text="${produ.precio}" th.value="${produ.precio}" th.name="precio" th.id="precio"/>
+	   				  
+	   			</td>
+	   			<td>
+	   				<input type="number" value="0" name="cantidad" id="cantidad" />
+	   			</td>
+	   		</tr>
+	   		<td>
+	   				<input type="submit" value="Aceptar"/>
+	   			</td>
+	   			</form>
+	   		
+	   		
+	   	
+	   				<!--  <td><input type="submit" value="Aceptar"/></td>-->
+	   			</tr>
+	   		</table>
+   		</form>
+   	
+   		<p><a th:href="@{/seleccion}">Volver</a></p>
+   	</div>
+</body>
+</html>

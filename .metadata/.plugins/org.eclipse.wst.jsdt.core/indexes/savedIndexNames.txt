@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\elyvi\0Trimestre1Eclipse21\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3905027755.index

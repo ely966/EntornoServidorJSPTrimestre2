@@ -1,0 +1,34 @@
+
+š
+java:S4165'"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¥¥¼ß/HÉRMAJORZ
+CODE_SMELL
+š
+java:S4165/"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¥¥¼ß/HÊRMAJORZ
+CODE_SMELL
+•
+java:S4165."bRemove this useless assignment; "user" already holds the assigned value along all execution paths.(»¶¤İ8¥¥¼ß/HËRMAJORZ
+CODE_SMELL
+[
+java:S1656."/Remove or correct this useless self-assignment.(»¶¤İ8¥¥¼ß/HÌRMAJORZBUG
+g
+java:S11723"5Remove this unused method parameter "listaProductos".(ºŸ¹P8Çâíß/HÍRMAJORZ
+CODE_SMELL
+[
+java:S1656'"/Remove or correct this useless self-assignment.(µšŠ·8¥¥¼ß/HÏRMAJORZBUG
+h
+java:S1172;"5Remove this unused method parameter "listaProductos".(Å¢‡˜8Çâíß/HĞRMAJORZ
+CODE_SMELL
+[
+java:S1656/"/Remove or correct this useless self-assignment.(µšŠ·8¥¥¼ß/HÒRMAJORZBUG
+j
+java:S1128"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;8›äŠîß/HÓRMINORZ
+CODE_SMELL
+g
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8›äŠîß/HÕRMINORZ
+CODE_SMELL
+f
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8›äŠîß/H×RMINORZ
+CODE_SMELL
+g
+java:S1128	"5Remove this unused import 'javax.persistence.Column'.(ìûæH8›äŠîß/HÙRMINORZ
+CODE_SMELL

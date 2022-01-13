@@ -1,0 +1,20 @@
+
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(©ÛŠ—ýÿÿÿÿHÆ’RMINORZ
+CODE_SMELL
+d
+java:S1481?"+Remove this unused "proPed" local variable.(ÍŽðöùÿÿÿÿ8‡Ã½•å/Hß’RMINORZ
+CODE_SMELL
+p
+java:S1854S"<Remove this useless assignment to local variable "producto".(µ¤¼‡8‡Ã½•å/Há’RMAJORZ
+CODE_SMELL
+a
+java:S1481S"-Remove this unused "producto" local variable.(µ¤¼‡8‡Ã½•å/Hâ’RMINORZ
+CODE_SMELL
+t	java:S125c"<This block of commented-out lines of code should be removed.(™žÎâÿÿÿÿÿ8áÜ•å/H†“RMAJORZ
+CODE_SMELL
+o
+java:S1128";Remove this unused import 'com.example.demo.model.Usuario'.(í‘’û8¸ë—å/HŸRMINORZ
+CODE_SMELL
+Œ
+java:S1128"SRemove this unused import 'com.example.demo.repository.Ped_Prod_CantidaRepository'.(«ŸÞŒüÿÿÿÿ8¸ë—å/HŸŸRMINORZ
+CODE_SMELL

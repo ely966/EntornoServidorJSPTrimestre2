@@ -1,0 +1,9 @@
+
+Л
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(°ЮЄќщ€€€€8ћётия/HН|RMINORZ
+CODE_SMELL
+s	java:S125p"<This block of commented-out lines of code should be removed.(Г‘ьІь€€€€8ћётия/HП|RMAJORZ
+CODE_SMELL
+}
+java:S1128"JRemove this unused import 'com.example.demo.repository.UsuarioRepository'.(≠Ап‘8ћётия/HР|RMINORZ
+CODE_SMELL

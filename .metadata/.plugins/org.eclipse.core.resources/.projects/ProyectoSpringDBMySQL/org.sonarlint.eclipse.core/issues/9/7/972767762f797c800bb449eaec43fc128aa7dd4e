@@ -1,0 +1,35 @@
+
+£
+java:S4165j"oRemove this useless assignment; "listaProductosPed" already holds the assigned value along all execution paths.(ìÔóú8—Œ–å/H³•RMAJORZ
+CODE_SMELL
+l
+java:S1128"9Remove this unused import 'javax.persistence.ManyToMany'.(Àğ½8¨¬Ä“å/HùRMINORZ
+CODE_SMELL
+\
+java:S1656%"/Remove or correct this useless self-assignment.(µšŠ·8¨ø³¤ä/HÌRMAJORZBUG
+h
+java:S1172i"5Remove this unused method parameter "listaProductos".(•ã8—Œ–å/H°•RMAJORZ
+CODE_SMELL
+–
+java:S4165,"bRemove this useless assignment; "user" already holds the assigned value along all execution paths.(»¶¤İ8¨ø³¤ä/HÒRMAJORZ
+CODE_SMELL
+h
+java:S11721"5Remove this unused method parameter "listaProductos".(ºŸ¹P8¨ø³¤ä/HÍRMAJORZ
+CODE_SMELL
+\
+java:S1656j"/Remove or correct this useless self-assignment.(ìÔóú8—Œ–å/H²•RMAJORZBUG
+›
+java:S4165-"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¨ø³¤ä/HËRMAJORZ
+CODE_SMELL
+›
+java:S4165%"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¨ø³¤ä/HÏRMAJORZ
+CODE_SMELL
+\
+java:S1656,"/Remove or correct this useless self-assignment.(»¶¤İ8¨ø³¤ä/HÊRMAJORZBUG
+i
+java:S11729"5Remove this unused method parameter "listaProductos".(Å¢‡˜8¨ø³¤ä/HĞRMAJORZ
+CODE_SMELL
+\
+java:S1656-"/Remove or correct this useless self-assignment.(µšŠ·8¨ø³¤ä/HÓRMAJORZBUG
+o	java:S125"<This block of commented-out lines of code should be removed.(ö‘îÙ8¨¬Ä“å/HøRMAJORZ
+CODE_SMELL

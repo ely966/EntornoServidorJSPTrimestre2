@@ -1,0 +1,55 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Ped_Prod_Cantida;
+import com.example.demo.model.Pedido;
+import com.example.demo.model.Producto;
+import com.example.demo.repository.Ped_Prod_CantidaRepository;
+import com.example.demo.repository.PedidoRepository;
+
+@Primary
+@Service("Ped_Prod_CantidaServiceDB")
+public class Ped_Prod_CantidaServiceDB implements  Ped_Prod_CantidaService{
+
+	@Autowired
+	private Ped_Prod_CantidaRepository repositorioPedProd;
+	@Autowired
+	private Ped_Prod_CantidaService repositorioServicePP;
+	@Autowired
+	private PedidoRepository repositorioPedido;
+	@Autowired
+	private ProductoService serviProd;
+	@Autowired
+	private PedidoService serviPedi;
+	
+	
+	
+	
+	@Override
+	public Ped_Prod_Cantida add(Ped_Prod_Cantida pedidoProd) {
+		return repositorioPedProd.save(pedidoProd);
+	}
+	@Override
+	public Ped_Prod_Cantida findById(long id) {
+		return repositorioPedProd.findById(id).orElse(null);
+	}
+	@Override
+	public List<Ped_Prod_Cantida> findAll(){
+		return repositorioPedProd.findAll();
+	}
+	@Override
+	public Ped_Prod_Cantida edit(Ped_Prod_Cantida pedidoProd) {
+		return repositorioPedProd.save(pedidoProd);
+	}
+	
+	@Override
+	public void init() {
+		
+	}
+	
+}

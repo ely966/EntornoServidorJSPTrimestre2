@@ -1,0 +1,16 @@
+
+`
+java:S1656-"/Remove or correct this useless self-assignment.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HêzRMAJORZBUG
+`
+java:S1656,"/Remove or correct this useless self-assignment.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HëzRMAJORZBUG
+`
+java:S1656+"/Remove or correct this useless self-assignment.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HìzRMAJORZBUG
+
+java:S4165-"fRemove this useless assignment; "cantidad" already holds the assigned value along all execution paths.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HízRMAJORZ
+CODE_SMELL
+œ
+java:S4165+"dRemove this useless assignment; "nombre" already holds the assigned value along all execution paths.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HîzRMAJORZ
+CODE_SMELL
+œ
+java:S4165,"dRemove this useless assignment; "precio" already holds the assigned value along all execution paths.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HïzRMAJORZ
+CODE_SMELL

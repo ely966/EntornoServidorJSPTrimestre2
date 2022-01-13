@@ -1,0 +1,18 @@
+
+n	java:S125 "<This block of commented-out lines of code should be removed.(û¢¶ü8•ø’ôÜ/HË5RMAJORZ
+CODE_SMELL
+e
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ãé›ôÜ/Hÿ5RMINORZ
+CODE_SMELL
+n
+java:S1128";Remove this unused import 'javax.annotation.PostConstruct'.(›ÅÁ8ãé›ôÜ/HÉ5RMINORZ
+CODE_SMELL
+s	java:S125-"<This block of commented-out lines of code should be removed.(’•îæıÿÿÿÿ8•ø’ôÜ/HØ5RMAJORZ
+CODE_SMELL
+s	java:S125b"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ãé›ôÜ/H×5RMAJORZ
+CODE_SMELL
+s	java:S1253"<This block of commented-out lines of code should be removed.(×ú¦òşÿÿÿÿ8•ø’ôÜ/HÚ5RMAJORZ
+CODE_SMELL
+c
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ãé›ôÜ/Hı5RMINORZ
+CODE_SMELL

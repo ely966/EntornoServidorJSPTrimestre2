@@ -1,0 +1,18 @@
+
+a
+java:S1481f"-Remove this unused "producto" local variable.(ªχ±ψ8―µΎ–ε/Hή—RMINORZ
+CODE_SMELL
+j
+java:S1135r"2Complete the task associated to this TODO comment.(» ζÿÿÿÿÿ8ϋ¦Ξ¤δ/HΫRINFOZ
+CODE_SMELL
+o	java:S125L"<This block of commented-out lines of code should be removed.(΅‹Πΰ8ϋ¦Ξ¤δ/HΦRMAJORZ
+CODE_SMELL
+p
+java:S1481h"7Remove this unused "productosDelPedido" local variable.(σί¶ όÿÿÿÿ8ϋ¦Ξ¤δ/HΰRMINORZ
+CODE_SMELL
+_
+java:S1168s"+Return an empty collection instead of null.(¥Ήο8ϋ¦Ξ¤δ/HέRMAJORZ
+CODE_SMELL
+
+java:S1854h"FRemove this useless assignment to local variable "productosDelPedido".(σί¶ όÿÿÿÿ8ϋ¦Ξ¤δ/HάRMAJORZ
+CODE_SMELL

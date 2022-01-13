@@ -1,0 +1,23 @@
+
+o	java:S125]"<This block of commented-out lines of code should be removed.(ñĞÁ8›êÊ¤ä/HÉRMAJORZ
+CODE_SMELL
+
+java:S1854U"FRemove this useless assignment to local variable "productosDelPedido".(óß¶ üÿÿÿÿ8›êÊ¤ä/HÈRMAJORZ
+CODE_SMELL
+j
+java:S1135o"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8›êÊ¤ä/HĞRINFOZ
+CODE_SMELL
+o	java:S1257"<This block of commented-out lines of code should be removed.(¡‹Ğà8›êÊ¤ä/HËRMAJORZ
+CODE_SMELL
+x
+java:S1128	"DRemove this unused import 'com.example.demo.model.Ped_Prod_Cantida'.(™¬Û8ÛØ·–å/HÊ—RMINORZ
+CODE_SMELL
+a
+java:S1481S"-Remove this unused "producto" local variable.(ª÷±ø8ÛØ·–å/HÈ—RMINORZ
+CODE_SMELL
+p
+java:S1481U"7Remove this unused "productosDelPedido" local variable.(óß¶ üÿÿÿÿ8›êÊ¤ä/HÔRMINORZ
+CODE_SMELL
+_
+java:S1168p"+Return an empty collection instead of null.(¥¹ï8›êÊ¤ä/HÑRMAJORZ
+CODE_SMELL

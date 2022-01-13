@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>AddPedido</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link type="text/css" href="/styles/css/estilos.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="formularioo">
+   		<h1>Comprobar pedido</h1>
+   		<table class="tablitaversion2">
+   			<tr>
+   				<th>IdPedido</th>
+   				<th>Usuario</th>
+   				<th>Direccion</th>
+   				<th></th>
+   				<th>PrecioTotal</th>
+   			</tr>
+   			<form th:action="@{/pedido/addList}" th.object="${pedido}"
+   		 method="post">
+   			<td>
+		 		<input type="hidden" th:text="${pedido.id}" th.value="${pedido.id}" th.name="id" th.id="id" /> 
+   			</td>
+   			<td>
+   				<input type="hidden" th:text="${pedido.user.getUserName}" th.value="${pedido.user}" th.name="user" th.id="user"/>
+   			</td>
+   			<td>
+   				<input  th.value="${pedido.direccion}" name="direccion"  id="direccion"/>
+   			<p>Por defecto la direccion sera: </p>
+   			<p th:text="${pedido.direccion}"></p>
+   			</td>
+   				<td></td>
+   				<tr><td>----</td><th> <h4>Lista de  productos</h4></th><td>-----</td></tr>
+   				<tr><td></td>td></tr>
+   			<tr>
+		   		<th>Id</th>
+		   		<th>NombreProducto</th>
+		   		<th>Precio</th>
+		   	<th>Cantidad</th>
+	   		</tr>
+   			<tr th:each="prod : ${listaProductosCantidad}">
+   				<td>
+   					<input type="hidden" th:text="${prod.productoo.id}" th:value="${prod.id}" th:name="id" th.id="id"/>
+   				</td>
+   				<td>
+   					<input type="hidden" th:text="${prod.productoo.nombre}" th:value="${prod.nombre}" th:name="nombre" th.id="nombre"/>
+   				</td>
+   				<td>
+   					<input type="hidden" th:text="${prod.productoo.precio}" th:name="${prod.precio}" name="precio" th.id="precio"/>
+   				</td>
+   				<!--  </tr><<tr th:each="cant : ${cantidades}">>-->
+   				<td>
+   					<input type="number"  th:value="${prod.cantidad}" name="cantidad" id="cantidad"/>
+   					
+   				</td>
+   				
+   				
+   			</tr>
+   				
+   				<!-- Precio Total -->
+   				<td>--</td>
+   				<td>---</td>
+   				<td>---</td>
+   				<td>---</td>
+   				<td>
+   					<h5 th:text="${precioTotal}"/>
+   				</td>
+   				
+   			</tr>
+   			<td><input type="submit" value="Aceptar"/></td>
+   			</form>
+   	
+   				<!--  <td><input type="submit" value="Aceptar"/></td>-->
+   			</tr>
+	</div>
+   		</table>
+  
+   	
+   	<p><a th:href="@{/servicio/seleccion}">Volver</a></p>
+</body>
+</html>

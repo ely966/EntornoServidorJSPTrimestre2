@@ -1,0 +1,8 @@
+
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ч¤™¬HѕЏRMINORZ
+CODE_SMELL
+™
+java:S41654"`Remove this useless assignment; "id" already holds the assigned value along all execution paths.(Ј©иЪюяяяя8Б†м“е/HВђRMAJORZ
+CODE_SMELL
+a
+java:S16564"/Remove or correct this useless self-assignment.(Ј©иЪюяяяя8Б†м“е/HБђRMAJORZBUG

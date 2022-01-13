@@ -1,0 +1,9 @@
+
+n
+java:S1128":Remove this unused import 'javax.persistence.CascadeType'.(†Ï§ 8ÒÖ≥§‰/H¡èRMINORZ
+CODE_SMELL
+m
+java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(¥≈º·8ÒÖ≥§‰/HøèRMINORZ
+CODE_SMELL
+o	java:S125"<This block of commented-out lines of code should be removed.(«ﬁæÆ8ÒÖ≥§‰/H√èRMAJORZ
+CODE_SMELL

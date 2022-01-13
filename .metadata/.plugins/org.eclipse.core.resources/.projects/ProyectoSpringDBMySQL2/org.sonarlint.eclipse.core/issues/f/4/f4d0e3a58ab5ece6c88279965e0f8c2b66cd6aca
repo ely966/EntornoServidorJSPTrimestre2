@@ -1,0 +1,15 @@
+
+~
+java:S1854c"FRemove this useless assignment to local variable "productosDelPedido".(óß¶ üÿÿÿÿ8û¦Î¤ä/HÓ{RMAJORZ
+CODE_SMELL
+n	java:S125G"<This block of commented-out lines of code should be removed.(¡‹Ðà8û¦Î¤ä/HÔ{RMAJORZ
+CODE_SMELL
+o
+java:S1481c"7Remove this unused "productosDelPedido" local variable.(óß¶ üÿÿÿÿ8û¦Î¤ä/HÙ{RMINORZ
+CODE_SMELL
+^
+java:S1168t"+Return an empty collection instead of null.(¥¹ï8û¦Î¤ä/HÛ{RMAJORZ
+CODE_SMELL
+i
+java:S1135s"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8û¦Î¤ä/HÞ{RINFOZ
+CODE_SMELL

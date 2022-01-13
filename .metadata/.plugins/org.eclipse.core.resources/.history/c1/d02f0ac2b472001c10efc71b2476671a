@@ -1,0 +1,378 @@
+package com.example.demo.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.model.Pedido;
+import com.example.demo.model.Producto;
+import com.example.demo.model.Usuario;
+import com.example.demo.repository.PedidoRepository;
+import com.example.demo.repository.ProductoRepository;
+import com.example.demo.service.PedidoService;
+import com.example.demo.service.ProductoService;
+import com.example.demo.service.UsuarioService;
+
+@Controller
+public class MainController {
+
+	@Autowired
+	private UsuarioService userServi;
+	
+	@Autowired
+	private ProductoService serviProd;
+	
+	@Autowired
+	private ProductoRepository repositorioProducto;
+	
+	@Autowired
+	//private PedidoService servipedi;
+	private PedidoRepository repositorioPedido;
+	
+	@Autowired
+	private HttpSession session;
+	
+	@Autowired
+	private PedidoService serviPedi;
+	
+	private int inicio=0;
+	
+	//**Inicio**//
+	//**Creamos unu usuario que se rellena con lsod atos del formulario que se escribira en el formulario de la prtada**//
+	@GetMapping({"/","/portada"})
+	public String login(Model model) {
+		model.addAttribute("usuario", new Usuario());
+		//serviPedi.init();
+		return "portada";
+	}
+	
+	//**Su verison post para evitar el pantallazo error**//
+	@PostMapping({"/"})
+	public String loginPost(Model model) {
+		model.addAttribute("usuario", new Usuario());
+		//servicioProducto.init();
+		//serviPedi.init();
+		return "portada";
+	}
+	
+//**Ha llegado los datos del usuario del formulario de la portada,**//
+//**Ahora comprobamos que el usuario, aver si existe**//
+	//**Desde el formulario me llega un objeto de tipo usuario, recogemos el usuario y comprobamos que exista//
+	@GetMapping({"/usuario/comprobar"})
+	public String comprobarUser (@Valid @ModelAttribute("usuario") Usuario usuario,
+			BindingResult bindingResult) {
+		//**Si hay algun error, redirija a la portada**//
+		if(bindingResult.hasErrors()) { 
+			//response.sendRedirect("/");
+			 return "portada";
+		}
+		//**Aqui comprobamos que el nombre de usuario exista. **//
+		if(userServi.findByUserName(usuario.getUserName()) != null) {
+			if(inicio == 0) {
+				serviPedi.init();
+				inicio=inicio+1;
+				}
+			
+			//**Si existe , añadimo el Nickname/nombreUser lo añadimos en la session**//
+			
+				String usuarioDelUser=usuario.getUserName();
+				session.setAttribute("userSesion",usuarioDelUser);
+				//**Crear un lemento que añada la id de pedido guardao ara mas adelante para que luego podamos añadir y editar"
+				//long idPed=servicioPedi.ultimoId();
+				//session.setAttribute("idPedi",idPed);
+				//**Ahora nos dirigimos a la pantalla session**//
+				//**le daremos la opcion de que muetsre las opciones de crear pedido o mostrar el listado**//
+				return "seleccion";	 
+			}
+			
+			return "portada";
+		}
+	//**Su version post para evitar el pantallazo error, si entra sin usuario, y como sera modo get , evitamos pantallazo**//
+		@PostMapping({"/usuario/comprobar"})
+		public String comprobarUser2(Model model) {
+			//servicioProducto.init();
+			return "portada";
+		}
+		//**Volver desde lista de pedido a seleccion**//
+		@GetMapping({"/seleccion"})
+		public String volverSelec (Model model) {
+			if(session.getAttribute("userSesion") != null) {
+				
+				 return "seleccion";
+			}else {
+			return "portada";
+			}
+		}
+		
+//****//
+//**--Desde Seleccion:--**//
+		
+		//**--Desde Seleccion: Listar pedidos del usuario--**//
+		@GetMapping({"/servicio/listarporUser"})
+		public String listarPedPorUser (Model model, ServletResponse res) throws IOException {
+			//**Recogemos la respuesta para comprobar, si no existe el usuario o session, redirijiremos a la portada**//
+			HttpServletResponse response = (HttpServletResponse) res;
+					
+			//**COmprobamos que la session y el usuario exista**//
+			if(session.getAttribute("userSesion") == null) {
+				 response.sendRedirect("/");
+				 return null;
+			}else {
+				//**Recogemos el username de la session**//
+				String userName = (String)session.getAttribute("userSesion");
+				//**Desde el username recojo el usuario**//
+				String a="";
+				Usuario userr=userServi.findByUserName(userName);
+				model.addAttribute("listaPedido", userr.getPedidos());
+				
+				return "listaPedidos";
+			}
+			
+		}
+		//**Su verison post para evitar el pantallazo error**//
+		@PostMapping({"/servicio/listarporUser"})
+		public String listarPedPorUser2 (Model model) {
+			//servicioProducto.init();
+			return "portada";
+				}
+//**Fin listado de pedidos**//
+		
+		//**----------------------------------**//
+		
+		//**Seleccionar el pedido a editar**//
+		//**Editar pedido**//
+		//**Una vez seleccionado el pedido de la lista de pedidos, se mostrara la informacion del pedido y permitir editar cantidades y direccion**//
+	@GetMapping({"/pedido/edit/{id}"})
+	public String recogerPedidoParaEditar(@PathVariable int id,Model model,ServletResponse res) throws IOException {
+		//**Recogemos la respuesta para comprobar, si no existe el usuario o session, redirijiremos a la portada**//
+		HttpServletResponse response = (HttpServletResponse) res;
+				
+		//**Comprobamos que la session y el usuario exista**//
+
+		if(session.getAttribute("userSesion") == null) {
+			response.sendRedirect("/");
+			 return null;
+		}else {
+			//**Si el usuario existe, recogeremos el usuario de la session**//
+			String userName = (String)session.getAttribute("userSesion");
+			//**Buscaremos el pedido por su id**//
+			Pedido pedConcreto= serviPedi.findById(id);
+			model.addAttribute("pedido", pedConcreto);
+			model.addAttribute("listaPedidoo",pedConcreto.getListaProductos());
+			
+			
+			return "editPedido";
+		}
+	}
+	
+	//**Su verison post para evitar el pantallazo error**//
+	@PostMapping({"/pedido/edit/{id}"})
+	public String editarPedido2 (Model model) {
+		//servicioProducto.init();
+		return "portada";
+				}
+	
+	
+		//**Editar pedidos**//
+	@PostMapping({"/pedido/edit/submit"})
+	public String editarPedidoNuevo(@Valid @ModelAttribute("pedido") Pedido pedido,@RequestParam(required=false,name=("cantidad"))Integer[] listaCantidad , @RequestParam(required=false,name=("id"))Integer idd,Model model, ServletResponse res) throws IOException   {
+		
+			//**Comprobamos que la session y el usuario exista**//
+
+			if(session.getAttribute("userSesion") == null) {//**SI no existe**//
+				
+				return "portada";
+			}else {
+				//**Si el usuario y session existe**//
+				//**Primero creamos una lista de integer, donde recogeremos al lista de integer recogida de las cantidades seleccionada del formulario**//
+					Integer[] listDeCantidades =listaCantidad;
+					//**EN esta lista añadimos el catalogo**//
+					List<Producto> productosListado=repositorioProducto.findAll();
+					Producto productoParaPedido=null;
+					//**Lista de productos con las cantidades**//
+					List<Producto> productosLis= new ArrayList();
+					//**Recorremos añadiendo cada producto del catalogo y le añadimos la cantidad seleccionada**//
+					for (int i=0; i< productosListado.size();i++) {
+						productoParaPedido=productosListado.get(i);
+						productoParaPedido.setCantidad(listaCantidad[i]);
+						productosLis.add(productoParaPedido);
+						
+		
+					}
+					//**Añadiremos en el hashMap los id de todos los idproductos y las cantidades que traemos del formulario del catalogo**//
+					//**Para ello mandaremos la lista de cantidades a un metodo al productoService**//
+					//**En este servidor recogera una lista de productos donde añadira los productos. y añadira a cada uno la cantidad seleccionad ane el formulario**//
+					
+					//**Recogeremos el usuario de la session**//
+					String user = (String)session.getAttribute("userSesion");
+					Usuario usuario =userServi.findByUserName(user);
+					//**Agregamos los datos al pedido**//
+					pedido.setUser(usuario);
+					pedido.setListaProductos(productosLis);
+					pedido.setId(idd);
+					//**En esta edicion borraremos el antiguo, y añadiremos el mismo pero con los dtaos cambiado**//
+					serviPedi.edit(pedido);
+					//**Redirige a la lista de usuario**//
+				return "redirect:/servicio/listarporUser";
+				}
+		}
+	//**Tiene su get para corregir errores, es decir, si la session esta vacia , para corregurla necesitamos su version get, para que no salte error y podamos redirigirlo**//
+	@GetMapping({"/pedido/edit/submit"})
+	public String editarPedidoNuevo(Model model, ServletRequest req,ServletResponse res) throws IOException   {
+		
+		//**Recogemos la respuesta. tambien recogi la peticion request por si acaso.
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) res;
+		//comprobamos si la session existe. Si no existe
+		if(session.getAttribute("userSesion") == null) {
+			response.sendRedirect("/");
+			 return null;
+		}else {
+		
+		return "seleccion";
+		}
+	}
+	
+		
+		
+		
+		//**Borrar pedido**//
+		
+		
+		//**Borrar pedido**//
+		
+						
+						
+						
+		//**---------------------------------------------**//
+//**--Desde Seleccion:--**//
+		
+//**Catalogo**//
+		//**Si se desea crear un pedido, tendra primero que ver el catalogo**//
+		//**Para ello mostraeros la lista de productos**//
+		@GetMapping({"/servicio/mostrarCatalogo"})
+		public String mostrarCatalogo (Model model,ServletResponse res) throws IOException {
+			//**Recogemos la respuesta para comprobar, si no existe el usuario o session, redirijiremos a la portada**//
+			HttpServletResponse response = (HttpServletResponse) res;
+			
+			//**Comprobamos que la session y el usuario exista**//
+			if(session.getAttribute("userSesion") == null) {
+				response.sendRedirect("/");
+				 return null;
+			}else {
+				String userName = (String)session.getAttribute("userSesion");
+				Producto productoo= new Producto();
+				model.addAttribute("catalogo", repositorioProducto.findAll());
+				model.addAttribute("productoo", productoo );
+				
+				return "catalogo";
+				
+			}
+		}
+		
+		//**Su verison post para evitar el pantallazo error**//
+		@PostMapping({"/servicio/mostrarCatalogo"})
+		public String mostrarCatalogo2 (Model model) {
+			//servicioProducto.init();
+			return "portada";
+					}
+			
+//****//
+		//-//
+		
+		
+		//Añadir pedido**//
+		
+		//**Añadir un nuevo pedido1. Primera parte que viene del catalogo**//
+		
+		@GetMapping({"/pedido/add/subm"})
+		public String addNew(Model model, ServletRequest req, ServletResponse res) throws IOException {
+			
+			//**Recogemos la respuesta. tambien recogi la peticion request por si acaso.
+			HttpServletRequest request = (HttpServletRequest) req;
+			HttpServletResponse response = (HttpServletResponse) res;
+			//comprobamos si la session existe. Si no existe
+			
+			if(session.getAttribute("userSesion") == null) {
+				//**redirige a la portada**//
+				response.sendRedirect("/");
+				 return null;
+			}else {
+				//**Si todo esta correcto, iremos a comprobar el pedido**//
+				model.addAttribute("pedido", new Pedido());
+				return "comprobarPedido";
+			}
+		}
+		
+		
+		//**Siguiente parte de añadir un nuevo pedido**//
+
+			
+		@PostMapping({"/pedido/add/subm"})
+		public String addNew( @Valid @ModelAttribute("pedido") Pedido pedido,@RequestParam(required=false,name=("cantidad"))Integer[] listaCantidad , Model model, ServletRequest req, ServletResponse res) {
+			//**Comprobamos que la session y el usuario exista**//
+
+			if(session.getAttribute("userSesion") == null) {//**SI no existe**//
+				
+				return "portada";
+			}else {
+				//**Si el usuario y session existe**//
+				//**Primero creamos una lista de integer, donde recogeremos al lista de integer recogida de las cantidades seleccionada del formulario**//
+					Integer[] listDeCantidades =listaCantidad;
+					//**EN esta lista añadimos el catalogo**//
+					List<Producto> productosListado=repositorioProducto.findAll();
+					Producto productoParaPedido=null;
+					//**Lista de productos con las cantidades**//
+					List<Producto> productosLis= new ArrayList();
+					//**Recorremos añadiendo cada producto del catalogo y le añadimos la cantidad seleccionada**//
+					for (int i=0; i< productosListado.size();i++) {
+						productoParaPedido=productosListado.get(i);
+						productoParaPedido.setCantidad(listaCantidad[i]);
+						productosLis.add(productoParaPedido);
+						
+		
+					}
+					//**Añadiremos en el hashMap los id de todos los idproductos y las cantidades que traemos del formulario del catalogo**//
+					//**Para ello mandaremos la lista de cantidades a un metodo al productoService**//
+					//**En este servidor recogera una lista de productos donde añadira los productos. y añadira a cada uno la cantidad seleccionad ane el formulario**//
+					
+					//**Recogeremos el usuario de la session**//
+					String user = (String)session.getAttribute("userSesion");
+					Usuario usuario =userServi.findByUserName(user);
+					//**Agregamos los datos al pedido**//
+					//pedido.setUser(usuario);
+					pedido.setListaProductos(productosLis);
+					
+					//**En esta edicion borraremos el antiguo, y añadiremos el mismo pero con los dtaos cambiado**//
+					serviPedi.add(pedido);
+					//**Redirige a la lista de usuario**//
+				model.addAttribute("pedido",pedido);
+				model.addAttribute("listaProductos",pedido.getListaProductos());
+				
+			
+				
+			return "comprobarPedido";
+			}
+		}
+		
+		
+	
+}
+

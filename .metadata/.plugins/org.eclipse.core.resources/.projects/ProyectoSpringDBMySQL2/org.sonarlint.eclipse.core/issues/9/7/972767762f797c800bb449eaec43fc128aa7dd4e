@@ -1,0 +1,22 @@
+
+–
+java:S4165*"bRemove this useless assignment; "user" already holds the assigned value along all execution paths.(»¶¤Ý8¨ø³¤ä/H’€RMAJORZ
+CODE_SMELL
+\
+java:S1656*"/Remove or correct this useless self-assignment.(»¶¤Ý8¨ø³¤ä/H“€RMAJORZBUG
+›
+java:S4165+"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¨ø³¤ä/H”€RMAJORZ
+CODE_SMELL
+\
+java:S1656#"/Remove or correct this useless self-assignment.(µšŠ·8¨ø³¤ä/H•€RMAJORZBUG
+\
+java:S1656+"/Remove or correct this useless self-assignment.(µšŠ·8¨ø³¤ä/H–€RMAJORZBUG
+›
+java:S4165#"gRemove this useless assignment; "direccion" already holds the assigned value along all execution paths.(µšŠ·8¨ø³¤ä/H—€RMAJORZ
+CODE_SMELL
+h
+java:S1172/"5Remove this unused method parameter "listaProductos".(ºŸ¹P8¨ø³¤ä/H˜€RMAJORZ
+CODE_SMELL
+i
+java:S11727"5Remove this unused method parameter "listaProductos".(Å¢‡˜8¨ø³¤ä/Hš€RMAJORZ
+CODE_SMELL
