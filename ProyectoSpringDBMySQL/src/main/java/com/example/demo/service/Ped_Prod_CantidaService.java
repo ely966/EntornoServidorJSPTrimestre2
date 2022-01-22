@@ -17,4 +17,7 @@ public interface Ped_Prod_CantidaService {
 	public List<Ped_Prod_Cantida> findAll();
 	public Ped_Prod_Cantida edit(Ped_Prod_Cantida pedidoProd);
 	//public List<Ped_Prod_Cantida> findByPedido(Pedido ped);
+	public void delete(long id);
+	//public List<Ped_Prod_Cantida> findForPedido(long idPed);
+	public int precioTotal(List<Ped_Prod_Cantida> listaProdYCantidad, List<Producto> productosListado);
 }

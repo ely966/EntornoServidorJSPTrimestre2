@@ -1,9 +1,12 @@
 
-a
-java:S14812"-Remove this unused "producto" local variable.(µ¤Ό‡8Ρ¨ÿ”ε/HΓ’RMINORZ
+j
+java:S1135D"2Complete the task associated to this TODO comment.(η‰Σ¨ωÿÿÿÿ8‡β”ίη/H”ςRINFOZ
 CODE_SMELL
-y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(®υΊΜHγRMINORZ
+a
+java:S14812"-Remove this unused "producto" local variable.(µ¤Ό‡8Ρ¨ÿ”ε/H‡ιRMINORZ
+CODE_SMELL
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(®υΊΜH†ιRMINORZ
 CODE_SMELL
 p
-java:S18542"<Remove this useless assignment to local variable "producto".(µ¤Ό‡8Ρ¨ÿ”ε/HΒ’RMAJORZ
+java:S18542"<Remove this useless assignment to local variable "producto".(µ¤Ό‡8Ρ¨ÿ”ε/H‰ιRMAJORZ
 CODE_SMELL

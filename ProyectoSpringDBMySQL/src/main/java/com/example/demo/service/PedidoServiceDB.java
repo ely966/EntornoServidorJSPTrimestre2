@@ -103,13 +103,23 @@ public class PedidoServiceDB implements PedidoService{
 		repositorioPedido.save(pedido3);
 		repositorioServicePP.init(catalogo, pedido1, pedido3, pedido2);
 		
-		
-		
-		
 	}
 	@Override
 	public List<Pedido> findByUsuario(Usuario user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public void delete(long id) {
+		repositorioPedido.deleteById(id);
+	}
+	
+
+	
+	public Pedido addUserYDIreccion (Pedido pedido,Usuario usuario, String direccion) {
+		pedido.setUser(usuario);
+		pedido.setDireccion(usuario.getDireccion());
+		return pedido;
+	}
+	
 }

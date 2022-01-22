@@ -1,114 +1,112 @@
 
-t	java:S125N"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HúRMAJORZ
-CODE_SMELL
-b
-java:S1481¶"-Remove this unused "userName" local variable.(üÖ›8‹Ñİ¤ä/H RMINORZ
-CODE_SMELL
-
-java:S4144L"UUpdate this method so that its implementation is not identical to "login" on line 68.(¹£©Ãúÿÿÿÿ8‹Ñİ¤ä/HìRMAJORZ
-CODE_SMELL
-p
-java:S1854ù";Remove this useless assignment to local variable "request".( ’Ø8‹Ñİ¤ä/H°RMAJORZ
-CODE_SMELL
-`
-java:S1481•"&Remove this unused "a" local variable.(¥Ÿëşÿÿÿÿ8‹Ñİ¤ä/HõRMINORZ
-CODE_SMELL
-{
-java:S4684Ë"@Replace this persistent entity with a simple POJO or DTO object.(¢Ùëª8‹Ñİ¤ä/HıRCRITICALZVULNERABILITY
-e
-java:S1135Æ"2Complete the task associated to this TODO comment.(òÚ8‹Ñİ¤ä/HëRINFOZ
-CODE_SMELL
-j
-java:S1854˜"5Remove this useless assignment to local variable "a".(ÛÜÇ—8ÉêÂÁä/H÷RMAJORZ
-CODE_SMELL
-q
-java:S1854 "<Remove this useless assignment to local variable "userName".(üÖ›8‹Ñİ¤ä/H€RMAJORZ
-CODE_SMELL
-t	java:S125v"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HœRMAJORZ
+i
+java:S3740Á"/Provide the parametrized type for this generic.(ÁÇÍ™ùÿÿÿÿ8‹Ñİ¤ä/H¥éRMAJORZ
 CODE_SMELL
 
-java:S1192¹"GDefine a constant instead of duplicating this literal "pedido" 3 times.(ÿ¢Õÿ8¬ê“Áä/H´RCRITICALZ
-CODE_SMELL
-o	java:S1256"<This block of commented-out lines of code should be removed.(›°¯Ì8‹Ñİ¤ä/H¸RMAJORZ
-CODE_SMELL
-b
-java:S1481 "-Remove this unused "userName" local variable.(üÖ›8‹Ñİ¤ä/H–RMINORZ
-CODE_SMELL
-u	java:S125 "<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/H™RMAJORZ
-CODE_SMELL
-o	java:S125["<This block of commented-out lines of code should be removed.(ú’»8‹Ñİ¤ä/H³RMAJORZ
-CODE_SMELL
+java:S4684X"@Replace this persistent entity with a simple POJO or DTO object.(©ÖÓÇùÿÿÿÿ8‹Ñİ¤ä/HÛéRCRITICALZVULNERABILITY
 q
-java:S1854¶"<Remove this useless assignment to local variable "userName".(üÖ›8‹Ñİ¤ä/H“RMAJORZ
+java:S1854¯"<Remove this useless assignment to local variable "response".(âÁş±8ÖªÀæ/H¤éRMAJORZ
 CODE_SMELL
-p	java:S125ú"<This block of commented-out lines of code should be removed.(Ş’Í8ÉêÂÁä/H²RMAJORZ
-CODE_SMELL
-[
-java:S1481˜"&Remove this unused "a" local variable.(ÛÜÇ—8ÉêÂÁä/HøRMINORZ
+p
+java:S1854‘";Remove this useless assignment to local variable "request".( ’Ø8À‘Àæ/HäéRMAJORZ
 CODE_SMELL
 ˆ
-java:S1192h"LDefine a constant instead of duplicating this literal "userSesion" 16 times.(å¾ş¿şÿÿÿÿ8‹Ñİ¤ä/H‚RCRITICALZ
+java:S1192m"LDefine a constant instead of duplicating this literal "userSesion" 18 times.(å¾ş¿şÿÿÿÿ8‹Ñİ¤ä/H¦éRCRITICALZ
 CODE_SMELL
-y
-java:S1854Ú"DRemove this useless assignment to local variable "listDeCantidades".(Åœ·‚8‹Ñİ¤ä/H»RMAJORZ
+Œ
+java:S4144Ï"WUpdate this method so that its implementation is not identical to "addNew" on line 364.(£©ï¿8À‘Àæ/H‘éRMAJORZ
 CODE_SMELL
-…
-java:S1192G"IDefine a constant instead of duplicating this literal "portada" 12 times.(Şˆı’úÿÿÿÿ8‹Ñİ¤ä/H¢RCRITICALZ
+š
+java:S1192ì"]Define a constant instead of duplicating this literal "redirect:/servicio/seleccion" 3 times.(ìñ°¥ÿÿÿÿÿ8¬¤ÈÀæ/HºéRCRITICALZ
 CODE_SMELL
-u	java:S125º"<This block of commented-out lines of code should be removed.(ñÜˆÀøÿÿÿÿ8î˜¯–å/Hï–RMAJORZ
-CODE_SMELL
-y
-java:S1854Õ"DRemove this useless assignment to local variable "listDeCantidades".(Åœ·‚8‹Ñİ¤ä/HîRMAJORZ
+a
+java:S1481Ñ",Remove this unused "request" local variable.( ’Ø8‹Ñİ¤ä/HéRMINORZ
 CODE_SMELL
 p
-java:S1854½";Remove this useless assignment to local variable "request".( ’Ø8‹Ñİ¤ä/HêRMAJORZ
-CODE_SMELL
-
-java:S1192n"JDefine a constant instead of duplicating this literal "seleccion" 4 times.(„¦ûÛ8‹Ñİ¤ä/HåRCRITICALZ
-CODE_SMELL
-j
-java:S1481Õ"5Remove this unused "listDeCantidades" local variable.(Åœ·‚8‹Ñİ¤ä/H”RMINORZ
-CODE_SMELL
-
-java:S4684W"@Replace this persistent entity with a simple POJO or DTO object.(©ÖÓÇùÿÿÿÿ8‹Ñİ¤ä/HäRCRITICALZVULNERABILITY
-t	java:S125F"<This block of commented-out lines of code should be removed.(¼÷Ïüøÿÿÿÿ8‹Ñİ¤ä/H±RMAJORZ
-CODE_SMELL
-i
-java:S3740æ"/Provide the parametrized type for this generic.(ÓüÆØûÿÿÿÿ8‹Ñİ¤ä/HRMAJORZ
+java:S1854®";Remove this useless assignment to local variable "request".( ’Ø8‹Ñİ¤ä/HæéRMAJORZ
 CODE_SMELL
 a
-java:S1481ù",Remove this unused "request" local variable.( ’Ø8‹Ñİ¤ä/HşRMINORZ
+java:S1481®",Remove this unused "request" local variable.( ’Ø8ÖªÀæ/H›éRMINORZ
 CODE_SMELL
-y
-java:S1854›"DRemove this useless assignment to local variable "listDeCantidades".(Åœ·‚8ÉêÂÁä/HüRMAJORZ
+b
+java:S1481¯"-Remove this unused "response" local variable.(âÁş±8ÖªÀæ/HÙéRMINORZ
 CODE_SMELL
-i
-java:S3740Ú"/Provide the parametrized type for this generic.(ÓüÆØûÿÿÿÿ8‹Ñİ¤ä/H˜RMAJORZ
+ˆ
+java:S1192÷"PDefine a constant instead of duplicating this literal "comprobarPedido" 3 times.(ÎëË‡8À‘Àæ/HÏéRCRITICALZ
 CODE_SMELL
-u	java:S125­"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HïRMAJORZ
+…
+java:S1192G"IDefine a constant instead of duplicating this literal "portada" 12 times.(Şˆı’úÿÿÿÿ8‹Ñİ¤ä/H¾éRCRITICALZ
 CODE_SMELL
-¡
-java:S1130Ë"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¢Ùëª8‹Ñİ¤ä/HšRMINORZ
+j
+java:S1135a"2Complete the task associated to this TODO comment.(Ş½‘Êúÿÿÿÿ8ıå¼å/HÜéRINFOZ
+CODE_SMELL
+k
+java:S1135"2Complete the task associated to this TODO comment.(ç‰Ó¨ùÿÿÿÿ8ÚçÕàæ/H“éRINFOZ
+CODE_SMELL
+€
+java:S1854’"FRemove this useless assignment to local variable "productoParaPedido".(í·‰§ùÿÿÿÿ8ÑË¯Şç/H´íRMAJORZ
+CODE_SMELL
+t	java:S125F"<This block of commented-out lines of code should be removed.(¼÷Ïüøÿÿÿÿ8‹Ñİ¤ä/HËéRMAJORZ
+CODE_SMELL
+e
+java:S1135Ø"2Complete the task associated to this TODO comment.(òÚ8À‘Àæ/HãéRINFOZ
 CODE_SMELL
 {
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(¤ş¨Ë8ÉêÂÁä/H¼RCRITICALZVULNERABILITY
-i
-java:S3740¡"/Provide the parametrized type for this generic.(ÓüÆØûÿÿÿÿ8ÉêÂÁä/H¯RMAJORZ
+java:S4684ä"@Replace this persistent entity with a simple POJO or DTO object.(–›­8‹Ñİ¤ä/HéRCRITICALZVULNERABILITY
+o	java:S125\"<This block of commented-out lines of code should be removed.(ú’»8‹Ñİ¤ä/HÌéRMAJORZ
 CODE_SMELL
-u	java:S125Ä"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8õøÊÁä/HŸRMAJORZ
+l
+java:S1481†"7Remove this unused "productoParaPedido" local variable.(«ãåİ8ÑË¯Şç/HµíRMINORZ
 CODE_SMELL
-j
-java:S1481›"5Remove this unused "listDeCantidades" local variable.(Åœ·‚8ÉêÂÁä/HğRMINORZ
-CODE_SMELL
-t	java:S125j"<This block of commented-out lines of code should be removed.(µà˜Ôúÿÿÿÿ8‹Ñİ¤ä/H¹RMAJORZ
+b
+java:S1481¼"-Remove this unused "userName" local variable.(üÖ›8‹Ñİ¤ä/H–éRMINORZ
 CODE_SMELL
 j
-java:S1481Ú"5Remove this unused "listDeCantidades" local variable.(Åœ·‚8‹Ñİ¤ä/HòRMINORZ
+java:S1481´"5Remove this unused "listDeCantidades" local variable.(­—©ò8‹Ñİ¤ä/HÍéRMINORZ
 CODE_SMELL
-u	java:S125Î"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HôRMAJORZ
+y
+java:S1854´"DRemove this useless assignment to local variable "listDeCantidades".(­—©ò8ÉêÂÁä/H”éRMAJORZ
 CODE_SMELL
-u	java:S125ë"<This block of commented-out lines of code should be removed.(Ìï‹³ıÿÿÿÿ8˜‡ø•å/H®”RMAJORZ
+t	java:S125y"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HâéRMAJORZ
+CODE_SMELL
+u	java:S125á"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/H•éRMAJORZ
+CODE_SMELL
+d
+java:S3740"/Provide the parametrized type for this generic.(ú‰©Ò8‹Ñİ¤ä/HØéRMAJORZ
+CODE_SMELL
+
+java:S4144L"UUpdate this method so that its implementation is not identical to "login" on line 68.(¹£©Ãúÿÿÿÿ8‹Ñİ¤ä/H éRMAJORZ
+CODE_SMELL
+p
+java:S1854î";Remove this useless assignment to local variable "request".( ’Ø8‹Ñİ¤ä/HİéRMAJORZ
 CODE_SMELL
 a
-java:S1481½",Remove this unused "request" local variable.( ’Ø8‹Ñİ¤ä/HRMINORZ
+java:S1481î",Remove this unused "request" local variable.( ’Ø8‹Ñİ¤ä/HŞéRMINORZ
+CODE_SMELL
+z
+java:S4684¬"@Replace this persistent entity with a simple POJO or DTO object.(¨Ä¡8ÉêÂÁä/H¹éRCRITICALZVULNERABILITY
+
+java:S1192p"JDefine a constant instead of duplicating this literal "seleccion" 5 times.(„¦ûÛ8‹Ñİ¤ä/HŠéRCRITICALZ
+CODE_SMELL
+p
+java:S1854Ñ";Remove this useless assignment to local variable "request".( ’Ø8ÖªÀæ/HéRMAJORZ
+CODE_SMELL
+q
+java:S1854¼"<Remove this useless assignment to local variable "userName".(üÖ›8‹Ñİ¤ä/HåéRMAJORZ
+CODE_SMELL
+t	java:S125N"<This block of commented-out lines of code should be removed.(¼ñşÿÿÿÿ8‹Ñİ¤ä/HàéRMAJORZ
+CODE_SMELL
+a
+java:S1481‘",Remove this unused "request" local variable.( ’Ø8À‘Àæ/H¢éRMINORZ
+CODE_SMELL
+¡
+java:S1130ä"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(–›­8‹Ñİ¤ä/H˜éRMINORZ
+CODE_SMELL
+o	java:S1256"<This block of commented-out lines of code should be removed.(›°¯Ì8‹Ñİ¤ä/H×éRMAJORZ
+CODE_SMELL
+
+java:S1192¿"GDefine a constant instead of duplicating this literal "pedido" 3 times.(ÿ¢Õÿ8¬ê“Áä/HÓéRCRITICALZ
+CODE_SMELL
+e
+java:S1135õ"2Complete the task associated to this TODO comment.(òÚ8‹Ñİ¤ä/HšéRINFOZ
 CODE_SMELL

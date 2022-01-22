@@ -1,0 +1,43 @@
+body{
+    height: 100%;
+	background: url("/styles/fondo1.jpg");
+	background-size: cover;
+	margin: 20px;
+
+}
+
+.formulario{
+	background: linear-gradient(to right, #00bfff, white);
+	border-radius: 10px;
+	box-shadow: 0 0 8px 8px white inset;
+	text-align:center;
+	 height: 300px;
+	 
+}
+.formularioo{
+	background: linear-gradient(to right, #00bfff, white);
+	border-radius: 10px;
+	box-shadow: 0 0 8px 8px white inset;
+	text-align:center;
+	 height: 600px;
+	 
+}
+
+.tablita{
+	width: 100%;
+	margin: 20px;
+	border-collapse: collapse;
+}
+
+.tablitaversion2{
+	width: 80%;
+	margin: 20px;
+	border-collapse: collapse;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color: #FFFFFF;
+  color: blue;
+  text-align: left;
+  padding: 8px;
+}

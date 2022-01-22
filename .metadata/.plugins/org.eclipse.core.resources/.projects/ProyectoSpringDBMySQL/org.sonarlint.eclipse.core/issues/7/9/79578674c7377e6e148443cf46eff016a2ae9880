@@ -1,8 +1,11 @@
 
-y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(×¤™¬H¾RMINORZ
-CODE_SMELL
 ™
-java:S41654"`Remove this useless assignment; "id" already holds the assigned value along all execution paths.(£©èÚşÿÿÿÿ8Á†ì“å/HÂRMAJORZ
+java:S4165="`Remove this useless assignment; "id" already holds the assigned value along all execution paths.(£©èÚşÿÿÿÿ8Á†ì“å/HİßRMAJORZ
 CODE_SMELL
 a
-java:S16564"/Remove or correct this useless self-assignment.(£©èÚşÿÿÿÿ8Á†ì“å/HÁRMAJORZBUG
+java:S1656="/Remove or correct this useless self-assignment.(£©èÚşÿÿÿÿ8Á†ì“å/HŞßRMAJORZBUG
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(×¤™¬HßßRMINORZ
+CODE_SMELL
+ƒ
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ÔÜ¸Àæ/HàßRMINORZ
+CODE_SMELL

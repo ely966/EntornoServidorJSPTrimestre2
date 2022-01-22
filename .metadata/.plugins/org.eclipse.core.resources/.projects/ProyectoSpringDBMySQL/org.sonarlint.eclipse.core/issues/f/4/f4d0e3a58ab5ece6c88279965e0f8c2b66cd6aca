@@ -1,18 +1,21 @@
 
-a
-java:S1481f"-Remove this unused "producto" local variable.(ª÷±ø8¯µ¾–å/HŞ—RMINORZ
+c
+java:S5411z"*Use the primitive boolean expression here.(ï¯ƒ›şÿÿÿÿ8Ê•Ó³ç/HÌìRMINORZ
 CODE_SMELL
 j
-java:S1135r"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8û¦Î¤ä/HÛRINFOZ
-CODE_SMELL
-o	java:S125L"<This block of commented-out lines of code should be removed.(¡‹Ğà8û¦Î¤ä/HÖRMAJORZ
-CODE_SMELL
-p
-java:S1481h"7Remove this unused "productosDelPedido" local variable.(óß¶ üÿÿÿÿ8û¦Î¤ä/HàRMINORZ
+java:S1135r"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8û¦Î¤ä/HÚìRINFOZ
 CODE_SMELL
 _
-java:S1168s"+Return an empty collection instead of null.(¥¹ï8û¦Î¤ä/HİRMAJORZ
+java:S1168s"+Return an empty collection instead of null.(¥¹ï8û¦Î¤ä/HÖìRMAJORZ
 CODE_SMELL
 
-java:S1854h"FRemove this useless assignment to local variable "productosDelPedido".(óß¶ üÿÿÿÿ8û¦Î¤ä/HÜRMAJORZ
+java:S1854h"FRemove this useless assignment to local variable "productosDelPedido".(óß¶ üÿÿÿÿ8û¦Î¤ä/HÙìRMAJORZ
+CODE_SMELL
+a
+java:S1481f"-Remove this unused "producto" local variable.(ª÷±ø8¯µ¾–å/HÛìRMINORZ
+CODE_SMELL
+p
+java:S1481h"7Remove this unused "productosDelPedido" local variable.(óß¶ üÿÿÿÿ8û¦Î¤ä/HÔìRMINORZ
+CODE_SMELL
+o	java:S125L"<This block of commented-out lines of code should be removed.(¡‹Ğà8û¦Î¤ä/HÏìRMAJORZ
 CODE_SMELL

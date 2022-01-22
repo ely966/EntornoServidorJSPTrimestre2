@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*Index */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+	background: rgb(34,193,195);
+  background: linear-gradient(135deg, rgba(58,192,253) 23%, rgba(243,246,244) ); 
+}
+
+#presentacion {
+	border-style: outset;
+	background: linear-gradient(to bottom, white, DeepSkyBlue);
+	float:left;
+	 width: 40%;
+	 
+}
+#imagen {
+	float:left;
+}
+
+/* Formulario */
+#parrafoinicial{
+	text-align: centre;
+	
+}
+#horario{
+	text-align: right;
+	font-size: smaller;
+	color: #E72512;
+}
+#formulario{
+  border: 5px outset #E72512;
+  background-color: lightblue;    
+  text-align: center;
+    background: linear-gradient(to right, red, purple);
+  
+}
+	/**<Pagina de mostrar el resultado> */
+	
+
+
+	/** Pagina de error. Núm negativo */
+	#divErrorNeg{
+		 border: 5px outset red;
+ 	 	background-color: lightyellow;    
+  		text-align: center;
+	}
+
+/** ------ */
+#error{
+	color: #E72512;
+}

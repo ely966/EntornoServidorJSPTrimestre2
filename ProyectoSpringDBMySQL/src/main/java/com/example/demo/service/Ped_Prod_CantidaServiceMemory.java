@@ -93,23 +93,35 @@ public class Ped_Prod_CantidaServiceMemory implements Ped_Prod_CantidaService{
 				}
 	}
 	
+	@Override
+	public void delete(long id) {
+		Boolean encontrado =false;
+		int i=0;
+		while ( i<repositorioServicePP.size() && !encontrado) {
+			if(repositorioServicePP.get(i).getId() == id) {
+				repositorioServicePP.remove(i); 
+				encontrado =true;
+			}
+			else {
+				i=i+1;
+			}
+		}
+	}
 
+	public int precioTotal(List<Ped_Prod_Cantida> listaProdYCantidad, List<Producto> productosListado) {
+		//**Precio total de todo el pedido se recogera en esta variable**//
+		int precioTotal=0;
+		//**Precio de cada cantidad de cada producto**//
+		int precioProducto=0;
+		Producto productoParaPedido=null;
+		for (int i=0; i< productosListado.size();i++) {
+			productoParaPedido=productosListado.get(i);//**Recogemos el producto que toca en orden**//
+			//**Multiplicamos el precio dl producto por la cantidad seleccionada**//
+			precioProducto=productoParaPedido.getPrecio()*listaProdYCantidad.get(i).getCantidad();
+			//**Lo vamos sumando al precio total**//
+			precioTotal=precioTotal+precioProducto;
+			}
+		return precioTotal;
+	}
 	
-//@Override
-//	public List<Ped_Prod_Cantida> findByPedido(Pedido ped) {
-//		Ped_Prod_Cantida proPed=null;
-//		List<Ped_Prod_Cantida> pedProdList=new ArrayList<>();
-//		int i = 0;
-//		while ( i < repositorioPed_Prod_Cantida.size()) {
-//			if (repositorioPed_Prod_Cantida.get(i).getPedido().getId() == ped.getId()) {
-//				
-//				pedProdList.add(repositorioPed_Prod_Cantida.get(i));
-//				i++;
-//				} 
-//			else {
-//				i++;
-//				}
-//		}
-//		return pedProdList;
-//	}
 }

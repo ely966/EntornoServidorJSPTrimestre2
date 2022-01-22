@@ -115,7 +115,22 @@ public class PedidoServiceMemory implements PedidoService {
 		return null;
 	}
 
-
+	@Override
+	public void delete(long id) {
+		Boolean encontrado =false;
+		int i=0;
+		while ( i<repositorioPedido.size() && !encontrado) {
+			if(repositorioPedido.get(i).getId() == id) {
+				repositorioPedido.remove(i); 
+				encontrado =true;
+			}
+			else {
+				i=i+1;
+			}
+		}
+	}
+	
+	
 
 }
 

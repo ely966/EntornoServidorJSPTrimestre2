@@ -1,5 +1,0 @@
-package com.example.demo.service;
-
-public interface Ped_Prod_CantidaService {
-
-}

@@ -1,6 +1,6 @@
 
-]Web:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿH§‰RMINORZBUG
-O	Web:S5256"%Add "<th>" headers to this "<table>".(¿‰˜ÿÿÿÿÿH¥‰RMAJORZBUG
-e	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(ñúºH¤‰RMAJORZBUG
-`Web:AvoidCommentedOutCodeCheck*"Remove this commented out code.(¯ÜøöH¦‰RMAJORZ
+e	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(ñúºH·ÂRMAJORZBUG
+]Web:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿH¸ÂRMINORZBUG
+O	Web:S5256"%Add "<th>" headers to this "<table>".(¿‰˜ÿÿÿÿÿH¹ÂRMAJORZBUG
+`Web:AvoidCommentedOutCodeCheck*"Remove this commented out code.(¯ÜøöHºÂRMAJORZ
 CODE_SMELL

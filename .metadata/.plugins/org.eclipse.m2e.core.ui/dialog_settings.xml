@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\holamundo"/>
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\PrimerProyectoJSP"/>
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ProyectoSprimCarrito"/>
 			<item value="C:\Users\elyvi\Desktop\Articulos-JSP-Servlet"/>
 			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ENtornoServicio2-main"/>
 		</list>

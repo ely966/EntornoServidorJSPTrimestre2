@@ -1,22 +1,22 @@
 
-a
-java:S1656>"/Remove or correct this useless self-assignment.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HÈRMAJORZBUG
+k
+java:S1172&"2Remove this unused method parameter "listaPedido".(ìƒşÎüÿÿÿÿ8ÆïÜ“å/HáŸRMAJORZ
+CODE_SMELL
 h
-java:S1128"5Remove this unused import 'javax.persistence.Column'.(ìûæH8şåÇ—å/HİRMINORZ
+java:S1128"5Remove this unused import 'javax.persistence.Column'.(ìûæH8şåÇ—å/HãŸRMINORZ
+CODE_SMELL
+
+java:S4165="dRemove this useless assignment; "nombre" already holds the assigned value along all execution paths.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HåŸRMAJORZ
+CODE_SMELL
+a
+java:S1656>"/Remove or correct this useless self-assignment.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HæŸRMAJORZBUG
+
+java:S4165>"dRemove this useless assignment; "precio" already holds the assigned value along all execution paths.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HçŸRMAJORZ
 CODE_SMELL
 Ÿ
-java:S4165?"fRemove this useless assignment; "cantidad" already holds the assigned value along all execution paths.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HÅRMAJORZ
+java:S4165?"fRemove this useless assignment; "cantidad" already holds the assigned value along all execution paths.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HèŸRMAJORZ
 CODE_SMELL
 a
-java:S1656?"/Remove or correct this useless self-assignment.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HÄRMAJORZBUG
+java:S1656?"/Remove or correct this useless self-assignment.(•èÃùÿÿÿÿ8¨ˆ°¤ä/HéŸRMAJORZBUG
 a
-java:S1656="/Remove or correct this useless self-assignment.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HÉRMAJORZBUG
-k
-java:S1172&"2Remove this unused method parameter "listaPedido".(ìƒşÎüÿÿÿÿ8ÆïÜ“å/H¹RMAJORZ
-CODE_SMELL
-
-java:S4165="dRemove this useless assignment; "nombre" already holds the assigned value along all execution paths.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HÆRMAJORZ
-CODE_SMELL
-
-java:S4165>"dRemove this useless assignment; "precio" already holds the assigned value along all execution paths.(”ˆ…Ùşÿÿÿÿ8¨ˆ°¤ä/HÇRMAJORZ
-CODE_SMELL
+java:S1656="/Remove or correct this useless self-assignment.(´ú´Üøÿÿÿÿ8¨ˆ°¤ä/HêŸRMAJORZBUG

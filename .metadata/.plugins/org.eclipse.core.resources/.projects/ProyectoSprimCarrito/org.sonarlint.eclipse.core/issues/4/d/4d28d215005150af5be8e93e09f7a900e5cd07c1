@@ -1,17 +1,0 @@
-
-m	java:S125\"<This block of commented-out lines of code should be removed.(¹Æ®\8³—ğèß/H»GRMAJORZ
-CODE_SMELL
-S
-java:S11257"'Remove the unnecessary boolean literal.(üÅÖşH’FRMINORZ
-CODE_SMELL
-T
-java:S1116"Remove this empty statement.(ôŸìúÿÿÿÿ8®àşéÛ/H˜FRMINORZ
-CODE_SMELL
-°
-java:S1186e"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«Ïä«H•FRCRITICALZ
-CODE_SMELL
-S
-java:S1125K"'Remove the unnecessary boolean literal.(üÅÖşHFRMINORZ
-CODE_SMELL
-T	java:S1087")Either remove or fill this block of code.(üÅÖşH—FRMAJORZ
-CODE_SMELL
