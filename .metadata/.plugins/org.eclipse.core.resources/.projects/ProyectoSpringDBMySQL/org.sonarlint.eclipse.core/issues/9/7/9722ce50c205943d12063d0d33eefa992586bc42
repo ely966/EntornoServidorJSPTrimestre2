@@ -1,9 +1,9 @@
 
-m
-java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8ñ…³¤ä/HïÕRMINORZ
-CODE_SMELL
 n
-java:S1128":Remove this unused import 'javax.persistence.CascadeType'.( ì¤Ê8ñ…³¤ä/HñÕRMINORZ
+java:S1128":Remove this unused import 'javax.persistence.CascadeType'.( ì¤Ê8ñ…³¤ä/HáŠRMINORZ
 CODE_SMELL
-o	java:S125"<This block of commented-out lines of code should be removed.(ÇÞ¾®8ñ…³¤ä/HóÕRMAJORZ
+o	java:S125"<This block of commented-out lines of code should be removed.(ÇÞ¾®8ñ…³¤ä/HãŠRMAJORZ
+CODE_SMELL
+m
+java:S1128"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á8ñ…³¤ä/HäŠRMINORZ
 CODE_SMELL
