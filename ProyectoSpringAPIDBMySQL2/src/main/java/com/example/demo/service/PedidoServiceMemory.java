@@ -7,6 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.DTO.PedidoDTO;
+import com.example.DTO.PedidosDTOconverter;
+import com.example.demo.model.Ped_Prod_Cantida;
 import com.example.demo.model.Pedido;
 import com.example.demo.model.Producto;
 import com.example.demo.model.Usuario;
@@ -29,7 +32,15 @@ public class PedidoServiceMemory implements PedidoService {
 	
 	@Override
 	public Pedido add (Pedido ped) {
+		boolean find =false;
+		for(int i=0; i < repositorioPedido.size();i++) {
+			if (repositorioPedido.get(i).equals(ped)) {
+				find=true;
+			}
+		}
+		if(find == false) {
 		repositorioPedido.add(ped);
+		}
 		return ped;
 	}
 	@Override
@@ -37,7 +48,7 @@ public class PedidoServiceMemory implements PedidoService {
 		return repositorioPedido;
 	}
 	@Override
-	public Pedido findById(long id) {
+	public Pedido findById(Long id) {
 		Pedido pedido=null;
 		boolean encontrado = false;
 		int i = 0;
@@ -116,21 +127,59 @@ public class PedidoServiceMemory implements PedidoService {
 	}
 
 	@Override
-	public void delete(long id) {
+	public Pedido delete(Long id) {
 		Boolean encontrado =false;
 		int i=0;
 		while ( i<repositorioPedido.size() && !encontrado) {
 			if(repositorioPedido.get(i).getId() == id) {
+				Pedido ped = repositorioPedido.get(i);
 				repositorioPedido.remove(i); 
 				encontrado =true;
+				return ped;
 			}
 			else {
 				i=i+1;
 			}
+			}
+	return null;
+		
+	}
+	
+	public List<Ped_Prod_Cantida> listaUnionesDeUnPedido(Long id,List<Ped_Prod_Cantida> unionesGeneral){
+		/**Recogemos la lista de uniones del pedido**/
+		List<Ped_Prod_Cantida> unionesDelPedido = new ArrayList<Ped_Prod_Cantida>();;
+		for (int i=0; i< unionesGeneral.size();i++) {
+			if(unionesGeneral.get(i).getPedido().getId() == id) {
+				unionesDelPedido.add(unionesGeneral.get(i));
+			}
 		}
+		return unionesDelPedido;
 	}
 	
 	
-
+	/**Mostrar un pedido
+	
+	/**Añadir datos usuario y direccion**/
+	public Pedido addUserAndDireccion(Pedido pedido, Usuario user, String direccion) {
+		pedido.setUser(user);
+		pedido.setDireccion(direccion);
+		return pedido;
+	}
+	
+/**Mostrar pedidos SIn usuarios**/
+	/**Obtener una lista de usuario DTO**/
+	public List<PedidoDTO> listarPedidosSinUsuarios (List<Pedido> pedidos) {
+		PedidosDTOconverter pedidoConverter = new PedidosDTOconverter();
+		List<PedidoDTO> userDtos=pedidoConverter.converteTo(pedidos);
+		return userDtos;
+	}
+	/**Obtener un usuario dto**/
+	public PedidoDTO pedidoSinUsuarios (Pedido ped) {
+		PedidosDTOconverter pedidoConverter = new PedidosDTOconverter();
+		PedidoDTO pedidoDtos=pedidoConverter.converteToOnePedido(ped);
+		return pedidoDtos;
+	}
+	
+	
 }
 

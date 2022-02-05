@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Producto {
 	@Id
@@ -22,6 +24,7 @@ public class Producto {
 	private Integer cantidad;
 	//@Column(nullable=false)
 	@OneToMany(mappedBy="produtoo", targetEntity = Ped_Prod_Cantida.class )
+	@JsonManagedReference("unionPro") 
 	private List<Ped_Prod_Cantida>listaPedidop;
 	
 	
@@ -29,6 +32,15 @@ public class Producto {
 	public Producto( String nombre, Integer precio, @Min(0) Integer cantidad) {
 		super();
 		
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		this.listaPedidop= new ArrayList<>();
+		
+	}
+	public Producto(long id) {
+		super();
+		this.id=id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
@@ -44,7 +56,7 @@ public class Producto {
 		this.listaPedidop= new ArrayList<>();
 		
 	}
-
+	
 	
 	public Producto(long id, String nombre, Integer precio, @Min(0) Integer cantidad) {
 		super();

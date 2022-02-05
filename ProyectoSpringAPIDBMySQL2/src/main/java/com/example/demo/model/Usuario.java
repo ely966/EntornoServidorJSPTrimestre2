@@ -15,6 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Usuario {
 		
@@ -29,8 +32,9 @@ public class Usuario {
 		private String direccion;
 		private Integer telefono;
 		//public Pedido listadeProductos;
-		@Column(nullable=false)
+		//@Column(nullable=false)
 		@OneToMany(mappedBy="user")
+		@JsonManagedReference("PedUser") 
 		private List<Pedido>pedidos;
 		
 		
@@ -48,6 +52,18 @@ public class Usuario {
 			this.id=id;
 			this.userName = userName;
 			this.pass = pass;
+			this.pedidos=new ArrayList<>();
+		}
+		
+		public Usuario(long id,@NotEmpty String userName, @NotEmpty String pass,String nombre,String direccion,int telefono) {
+			
+			super();
+			this.id=id;
+			this.userName = userName;
+			this.pass = pass;
+			this.nombre=nombre;
+			this.direccion=direccion;
+			this.telefono=telefono;
 			this.pedidos=new ArrayList<>();
 		}
 		public Usuario(@NotEmpty String userName, @NotEmpty String pass, String nombre,

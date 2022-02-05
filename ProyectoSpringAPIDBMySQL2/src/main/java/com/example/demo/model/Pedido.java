@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,21 +15,25 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Pedido {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	//**strategy=GenerationType.AUTO**//
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@ManyToOne()
-	@JoinColumn(name="usuario_id")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonBackReference("PedUser")  
 	private Usuario user;
 	private String direccion;
 	//@ManyToMany
 	//private List<Producto> listaProductos;
 	@OneToMany(mappedBy="pedido")
+	@JsonManagedReference("unionPed") 
 	private List<Ped_Prod_Cantida>listaProductosPed;
+	
 	
 	public Pedido(Usuario user) {
 		super();
@@ -37,10 +43,19 @@ public class Pedido {
 		this.direccion=direccion;
 		
 	}
+	
 
 	public Pedido() {
 		super();
 		
+		this.user = user;
+		this.direccion=direccion;
+		this.listaProductosPed = new ArrayList<>();
+		
+	}
+	public Pedido(long id) {
+		super();
+		this.id = id;
 		this.user = user;
 		this.direccion=direccion;
 		this.listaProductosPed = new ArrayList<>();
@@ -77,6 +92,7 @@ public class Pedido {
 	public long getId() {
 		return id;
 	}
+	
 	public Usuario getUser() {
 		return user;
 	}

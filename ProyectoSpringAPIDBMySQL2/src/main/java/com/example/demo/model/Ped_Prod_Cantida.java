@@ -12,6 +12,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.beans.factory.annotation.Value;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 public class Ped_Prod_Cantida {
 	
@@ -19,11 +21,12 @@ public class Ped_Prod_Cantida {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@ManyToOne
-	@JoinColumn(name="pedido_id")
+	@ManyToOne @JoinColumn(name="pedido_id")
+	@JsonBackReference("unionPed") 
 	private Pedido pedido;
 	@JoinColumn(name="producto_id")
 	@ManyToOne(targetEntity= Producto.class) 
+	@JsonBackReference("unionPro") 
 	private Producto produtoo;
 	@Min(value=0)
 	private int cantidad;
