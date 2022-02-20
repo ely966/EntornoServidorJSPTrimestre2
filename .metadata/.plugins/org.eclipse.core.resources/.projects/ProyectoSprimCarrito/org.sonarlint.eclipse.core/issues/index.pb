@@ -15,3 +15,7 @@ k
 ;src/main/java/com/example/demo/service/ProductoService.java,6\2\62ab7b1a946d0469d66f627243dd91a8495579c6
 i
 9src/main/java/com/example/demo/service/PedidoService.java,5\d\5de688a6593a88992eaec6cd07490684a5edbff2
+b
+2src/main/java/com/example/demo/model/Producto.java,2\1\212dd9e0cee518235be1a35a4a1f000f1f5ecadf
+j
+:src/main/java/com/example/demo/service/UsuarioService.java,4\d\4d28d215005150af5be8e93e09f7a900e5cd07c1

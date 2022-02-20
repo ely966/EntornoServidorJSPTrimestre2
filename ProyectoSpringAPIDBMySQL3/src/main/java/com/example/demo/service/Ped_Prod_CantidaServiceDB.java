@@ -58,7 +58,7 @@ public class Ped_Prod_CantidaServiceDB implements  Ped_Prod_CantidaService{
 			repositorioPedProd.save(pedProd2);
 					
 					}
-		}
+	}
 	@Override
 	public Ped_Prod_Cantida delete(long id) {
 		if(repositorioPedProd.existsById(id)) {

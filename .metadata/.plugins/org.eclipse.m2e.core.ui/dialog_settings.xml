@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ProyectoSpringDBMySQLPrueba2"/>
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ejemplo_rest_service_v5"/>
+			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ejemplo_rest_service_jwt"/>
 			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ejemplo_rest_service_v3"/>
 			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\ejemplo_rest_service"/>
 			<item value="C:\Users\elyvi\0Trimestre1Eclipse21\holamundo"/>
@@ -104,5 +107,11 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="531"/>
+		<item key="x" value="1085"/>
+		<item key="y" value="203"/>
 	</section>
 </section>
