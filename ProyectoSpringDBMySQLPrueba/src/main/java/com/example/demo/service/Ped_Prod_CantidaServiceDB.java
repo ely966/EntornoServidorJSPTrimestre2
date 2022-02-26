@@ -63,7 +63,7 @@ public class Ped_Prod_CantidaServiceDB implements  Ped_Prod_CantidaService{
 	public void delete(long id) {
 		repositorioPedProd.deleteById(id);
 	}
-	
+	 
 	public int precioTotal(List<Ped_Prod_Cantida> listaProdYCantidad, List<Producto> productosListado) {
 		//**Precio total de todo el pedido se recogera en esta variable**//
 		int precioTotal=0;

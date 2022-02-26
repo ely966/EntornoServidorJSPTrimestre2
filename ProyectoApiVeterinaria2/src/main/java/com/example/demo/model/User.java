@@ -37,7 +37,9 @@ public class User {
 	@OneToMany(mappedBy="usuario")
 	@JsonManagedReference("userMascota") 
 	private List<Mascota> mascotas;
-	//private String rol = "USER";
+	@OneToMany(mappedBy="cliente")
+	@JsonManagedReference("userCita")
+	private List<Cita>citas;
 	
 	
 

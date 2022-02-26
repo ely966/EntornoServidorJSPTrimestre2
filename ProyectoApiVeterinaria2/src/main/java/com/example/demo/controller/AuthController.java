@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,8 +15,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.error.EmailExistedException;
@@ -57,9 +62,11 @@ public class AuthController {
     	   user.setPassword(encodedPass);
     	   /**Guardamos el usuario con la pass encifrada**/
     	   user= userRepo.save(user); 
+    	   return Collections.singletonMap("jwt-token", token);
        }
-       //String token = jwtUtil.generateToken(user.getEmail());
-       return Collections.singletonMap("jwt-token", token);
+       else {
+    	   throw new IllegalArgumentException("\"El correo ya existe\"");
+       }
         
     }
     /**
@@ -90,5 +97,17 @@ public class AuthController {
     public void throwException() {
         throw new IllegalArgumentException("\"El correo ya existe\"");
     }
-
+    
+ 
+    
+  //  @GetMapping("/auth/comprobar/{email}")
+ //   public String ComprobarExistencia(@PathVariable String email){
+ //	   /**activar init**/
+  //  	User usuario = userRepo.findByEmail(email).get();
+   // 	if(usuario !=null) {
+  //  		return "existe";
+    //	}
+	//	return "a";
+ 	   
+// }
 }

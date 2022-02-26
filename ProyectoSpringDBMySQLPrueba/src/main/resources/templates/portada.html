@@ -14,10 +14,10 @@
 	<h1>Welcome</h1>
 		<form action="#" th:action="@{/usuario/comprobar}" method="get" th:object="${usuario}">
 			<p>Usuario</p>
-			<p><input type="text" th:field="*{userName}" required/></p>
+			<p><input type="text" th:field="*{userName}" id="username" required/></p>
 			<p>Contraseña</p>
-			<p><input type="text" th:field="*{pass}" required/></p>
-			<p><input type="submit" value="Enviar"/></p>
+			<p><input type="text" th:field="*{pass}" id="passw" required/></p>
+			<p><input type="submit" id="enviar" value="Enviar"/></p>
 		</form>
 	</div>
  </div>   

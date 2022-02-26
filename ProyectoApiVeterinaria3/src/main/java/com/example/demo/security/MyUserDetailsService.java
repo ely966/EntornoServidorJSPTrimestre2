@@ -30,7 +30,7 @@ public class MyUserDetailsService implements UserDetailsService {
                 email,
                 user.getPassword(),
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_CLIENTE")));
-       // }
+      // }
     }
 }
 //else if (userRes.get().getRol().equals("admin") ){

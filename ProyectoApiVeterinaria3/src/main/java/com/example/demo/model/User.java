@@ -50,7 +50,7 @@ public class User {
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
-		
+	
 	}
 
 
