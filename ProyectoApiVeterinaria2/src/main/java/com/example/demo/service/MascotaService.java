@@ -19,7 +19,12 @@ public class MascotaService {
 	
 	@Autowired private MascotaRepository mascotaRepo;
 	
-
+	/**
+	 * Añadir una mascota
+	 * @param mascota
+	 * @param cliente
+	 * @return mascota añadida
+	 */
 	public Mascota addMascota(Mascota mascota, User cliente) {
 		Mascota newMascota= new Mascota();
 		newMascota.setNombre(mascota.getNombre());
@@ -31,13 +36,25 @@ public class MascotaService {
 		List<Mascota>pets=mascotaRepo.findAll();
 		return newMascota;
 	}
+	/**
+	 * Encontrar una mascota por su id
+	 * @param id
+	 * @return Mascota
+	 */
 	public Mascota encontrarId(Long id) {
 		Mascota mascotaseleccionada = mascotaRepo.findById(id).get();
 		return mascotaseleccionada;
 		
 	}
+	/**
+	 * Borra una mascota
+	 * @param mascota
+	 * @return mascota borrada
+	 */
 	public Mascota delete (Mascota mascota) {
 		if(mascotaRepo.existsById(mascota.getId())) {
+			mascota.setUsuario(null);
+			mascotaRepo.save(mascota);
 			mascotaRepo.deleteById(mascota.getId());
 			return mascota;
 		}
@@ -46,6 +63,10 @@ public class MascotaService {
 		}
 	}
 	
+	/**
+	 * Mostrar las mascotas del usuario
+	 * @param cliente
+	 */
 	public void mostrarMascotaPorUsuario(User cliente){
 		List<Mascota> mascotasGeneral =mascotaRepo.findAll();
 		List<Mascota> mascotasUser=new ArrayList();
@@ -62,10 +83,32 @@ public class MascotaService {
 	 * @param cliente
 	 * @return lista de las mascotas que e pertenece al cliente
 	 */
-	
+	/**
+	 * Otra forma de obtener las mascotas del cliente
+	 * @param cliente
+	 * @return lista de mascota del cliente
+	 */
 	public List<Mascota> mostrarMascotadeUser(User cliente){
 		List<Mascota> mascotasUser=cliente.getMascotas();
 		return mascotasUser;
+	}
+	
+	/**
+	 * Editar una mascota
+	 * @param mascota
+	 * @return mascota editada
+	 */
+	public Mascota editarMascota(Mascota mascota, User usuario) {
+		List<Mascota> mascotasGeneral =mascotaRepo.findAll();
+		mascota.setUsuario(usuario);
+		for (int i =0; mascotasGeneral.size() > i ; i=i+1) {
+			if(mascotasGeneral.get(i).getId() == mascota.getId()) {
+				mascotaRepo.save(mascota);
+			}
+		}
+		return mascota;
+
+		
 	}
 	
 	

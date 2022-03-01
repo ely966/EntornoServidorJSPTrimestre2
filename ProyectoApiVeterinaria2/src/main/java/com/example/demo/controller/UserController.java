@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,7 @@ import com.example.demo.error.CitaExistedException;
 import com.example.demo.error.EmailExistedException;
 import com.example.demo.error.MascotaExistedException;
 import com.example.demo.model.Cita;
+import com.example.demo.model.CreadencialesCitaConId;
 import com.example.demo.model.CredencialesCita;
 import com.example.demo.model.Mascota;
 import com.example.demo.model.User;
@@ -49,9 +51,12 @@ public class UserController {
         String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userRepo.findByEmail(email).get();
     }
+    
+ /**Mascota**/  
     /**
-     * Con este metodo añadiremos mascota nueva y gracia asu relacion, se le añadira al cliente
+     *  Con este metodo añadiremos mascota nueva y gracia asu relacion, se le añadira al cliente
      * @param Trae la informacion de la mascota. Comprueba que el usuario
+     * @return l amscota nueva
      */
     
     @PostMapping("/cliente/mascota")
@@ -75,6 +80,98 @@ public class UserController {
 
        // return userRepo.findByEmail(email).get();//.get
     }
+    
+
+    /**
+     * Con este metodo mostraremos las mascotas del usuario del token
+     * Se recoge el email que es unico del token
+     * @return
+     */
+    
+    @GetMapping("/cliente/mascota")
+    public List<Mascota> mascotasDelUser(){
+    	
+    	try {
+    		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            User usuario = userRepo.findByEmail(email).get();
+            if(usuario != null) {
+            	 List<Mascota> mascotas =mascotaServi.mostrarMascotadeUser(usuario);
+            	 return mascotas;
+            }else {
+            	 throw new IllegalArgumentException("\"El usuario no existe\"");
+            }
+    	}catch (AuthenticationException authExc){
+            throw new RuntimeException("No tienes permiso");
+        }      
+ 
+    }
+  
+    
+    /**
+     * Borrar una mascota por su id
+     * @param id
+     * @return
+     */
+     
+    @DeleteMapping("/cliente/mascota/{id}")
+    public ResponseEntity<?> deletePets(@PathVariable Long id){
+    	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User usuario = userRepo.findByEmail(email).get();
+    	
+		if (usuario != null) {//*si el usuario no es null*/
+			Boolean pet= mascotaRepo.existsById(id);
+			
+			if (pet) {//*Si la mascota existe**/
+				Mascota MascotaSeleccionada= mascotaRepo.getById(id);
+				citaServi.deleteByPet(id);
+				mascotaServi.delete(MascotaSeleccionada);
+				
+				return ResponseEntity.noContent().build();
+			}else {
+				throw new MascotaExistedException(id);
+			}
+			
+		
+		} else {
+			
+			throw new EmailExistedException(email);
+		}
+        
+    }
+    
+    
+    
+    
+    /**
+     * Editar la mascota. Recge usuario del token
+     * @param mascota
+     * @return
+     */
+    
+    @PutMapping("/cliente/mascota")
+    public Mascota editarMascota(@RequestBody Mascota mascota) {
+    	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User usuario = userRepo.findByEmail(email).get();
+    	
+		if (usuario == null) {
+			throw new EmailExistedException(email);
+		} else {
+			
+			Boolean pet= mascotaRepo.existsById(mascota.getId());
+			if (pet) {/**Si existe la cita**/
+				
+				mascotaServi.editarMascota(mascota, usuario);
+				
+				return mascota;
+			}else {
+				throw new MascotaExistedException(mascota.getId());
+			}
+		
+		}
+        
+    }
+    
+//**Citas**//
     
     /**
      * Con este metodo añadiremos cita nueva
@@ -109,29 +206,7 @@ public class UserController {
             throw new RuntimeException("Incorrecto Crear cita");
         }
     }
-    /**
-     * Con este metodo mostraremos las mascotas del usuario del token
-     * Se recoge el email que es unico del token
-     * @return
-     */
     
-    @GetMapping("/cliente/mascota")
-    public List<Mascota> mascotasDelUser(){
-    	
-    	try {
-    		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            User usuario = userRepo.findByEmail(email).get();
-            if(usuario != null) {
-            	 List<Mascota> mascotas =mascotaServi.mostrarMascotadeUser(usuario);
-            	 return mascotas;
-            }else {
-            	 throw new IllegalArgumentException("\"El usuario no existe\"");
-            }
-    	}catch (AuthenticationException authExc){
-            throw new RuntimeException("No tienes permiso");
-        }      
- 
-    }
     /**
      * Mostrar la lista de citas veterinarias que ha solicitado el cliente
      * @return lista de citas veterinarias
@@ -152,37 +227,6 @@ public class UserController {
             throw new RuntimeException("No tienes permiso");
         }      
     }
-    
-    /**
-     * 
-     */
-    @DeleteMapping("/cliente/mascota/{id}")
-    public ResponseEntity<?> deletePets(@PathVariable Long id){
-    	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User usuario = userRepo.findByEmail(email).get();
-    	
-		if (usuario != null) {//*si el usuario no es null*/
-			Boolean pet= mascotaRepo.existsById(id);
-			
-			if (pet) {//*Si la mascota existe**/
-				Mascota MascotaSeleccionada= mascotaRepo.getById(id);
-				mascotaServi.delete(MascotaSeleccionada);
-				
-				return ResponseEntity.noContent().build();
-			}else {
-				throw new MascotaExistedException(id);
-			}
-			
-		
-		} else {
-			
-			throw new EmailExistedException(email);
-		}
-        
-    }
-    
-    
-    
     
     
     /**
@@ -216,10 +260,37 @@ public class UserController {
         
     }
     
+    /**
+     * Editar una cita
+     * @param mascota
+     * @return cita editada
+     */
+    @PutMapping("/cliente/cita")
+    public Cita editarMascota(@RequestBody CreadencialesCitaConId cita) {
+    	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User usuario = userRepo.findByEmail(email).get();
+    	
+		if (usuario == null) {
+			throw new EmailExistedException(email);
+		} else {
+			
+			Boolean citaExist = citaRepo.existsById(cita.getId());
+			if (citaExist) {/**Si existe la cita**/
+				
+				return citaServi.editarCita(cita, usuario);
+				
+				
+			}else {
+				throw new CitaExistedException(cita.getId());
+			}
+		
+		}
+        
+    }
+    
+    
     
     
     
    
-
-
 }

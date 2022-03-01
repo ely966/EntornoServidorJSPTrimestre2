@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.example.DTOConverter.UsuarioDTOConverter"/>
-    <fullyQualifiedTypeName name="com.example.demo.service.UsuarioServiceMemory"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
-    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
-    <fullyQualifiedTypeName name="com.example.demo.model.Usuario"/>
-    <fullyQualifiedTypeName name="com.example.DTO.UsuarioDTO"/>
     <fullyQualifiedTypeName name="com.example.DTO.UsuariosDTOConverter"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIdentityInfo"/>
     <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
@@ -60,4 +54,10 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
     <fullyQualifiedTypeName name="com.example.demo.model.CredencialesCita"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+    <fullyQualifiedTypeName name="com.example.demo.model.CreadencialesCitaConId"/>
+    <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.sql.Time"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonFormat"/>
 </qualifiedTypeNameHistroy>

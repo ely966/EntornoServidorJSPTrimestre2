@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -14,7 +16,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,13 +43,15 @@ public class Cita {
 	@JoinColumn(name="pet")
 	private Mascota pet;
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd ", timezone = "GMT+8")
 	private Date fecha;
 	@Temporal(TemporalType.TIME)
 	private Date hora;
 	private String motivo;
 	
 	
-	public Cita(Mascota pet, Date fecha, Date hora, String motivo) {
+	public Cita(Mascota pet, Date fecha, Time hora, String motivo) {
 		super();
 		this.pet = pet;
 		this.fecha = fecha;
@@ -57,6 +64,7 @@ public class Cita {
 		super();
 		this.pet = pet;
 		this.fecha = fecha;
+		this.hora=hora;
 		this.motivo = motivo;
 	}
 	

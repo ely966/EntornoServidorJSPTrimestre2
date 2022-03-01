@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Cita;
+import com.example.demo.model.CreadencialesCitaConId;
 import com.example.demo.model.CredencialesCita;
 import com.example.demo.model.Mascota;
 import com.example.demo.model.User;
@@ -20,6 +22,12 @@ public class CitaService {
 	@Autowired CitasRepository citaRepo;
 	 @Autowired private MascotaService mascotaServi;
 	
+	 /**
+	  * Añade una nueva cita
+	  * @param cita
+	  * @param usuario,cita
+	  * @return cita nueva
+	  */
 	public Cita addCita(CredencialesCita cita,User usuario) {
 		Cita nuevaCita = new Cita();
 		nuevaCita.setCliente(usuario);
@@ -31,6 +39,12 @@ public class CitaService {
 		citaRepo.save(nuevaCita);
 		return nuevaCita;
 	}
+	
+	/**
+	 * Encontrar una cita por su id
+	 * @param id
+	 * @return cita encontrada
+	 */
 	public Cita findCita(Long id){
 		Cita cita = new Cita();
 		List<Cita> citas=citaRepo.findAll();
@@ -42,6 +56,11 @@ public class CitaService {
 		return null;
 	}
 	
+	/**
+	 * Mostrar la lista de cita d eun cliente
+	 * @param cliente
+	 * @return lista de cita de un cliente
+	 */
 	public List<Cita> mostrarCitasUser(User cliente){
 		return cliente.getCitas();
 		
@@ -50,7 +69,7 @@ public class CitaService {
 	 * Eliminar una cita
 	 * @param usuario
 	 * @param cita
-	 * @return
+	 * @return 
 	 */
 	public Cita delete(User usuario,Cita cita) {
 		/**Eliminamos su union con la mascota**/
@@ -63,13 +82,35 @@ public class CitaService {
 		return cita;
 	}
 	
+	/**
+	 * Borrar las citas de una mascota
+	 * @param id de pet
+	 */
+	
 	public void deleteByPet(Long id) {
 		List<Cita>citas=citaRepo.findAll();
 		for (int i=0; citaRepo.count() > i;i=i+1) {
 			if(citas.get(i).getPet().getId() == id) {
-				citaRepo.delete(citas.get(i));
+				citas.get(i).setPet(null);
+				citas.get(i).setCliente(null);
+				citaRepo.save(citas.get(i));
+				citaRepo.deleteById(citas.get(i).getId());
 			}
 		}
 	}
-
+	
+	public Cita editarCita(CreadencialesCitaConId cita,User usuario) {
+		Cita citaEditada = new Cita();
+		citaEditada.setId(cita.getId());
+		citaEditada.setCliente(usuario);
+		citaEditada.setFecha(cita.getFecha());
+		citaEditada.setHora(cita.getFecha());
+		Mascota mascota= mascotaServi.encontrarId(cita.getPetid());
+		citaEditada.setPet(mascota);
+		citaEditada.setMotivo(cita.getMotivo());
+		citaRepo.save(citaEditada);
+		return citaEditada;
+	}
+	
+	
 }
