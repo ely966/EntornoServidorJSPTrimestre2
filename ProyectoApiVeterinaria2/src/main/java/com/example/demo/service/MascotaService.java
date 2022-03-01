@@ -42,8 +42,17 @@ public class MascotaService {
 	 * @return Mascota
 	 */
 	public Mascota encontrarId(Long id) {
-		Mascota mascotaseleccionada = mascotaRepo.findById(id).get();
-		return mascotaseleccionada;
+		List<Mascota>pets=mascotaRepo.findAll();
+		Mascota pet= new Mascota();
+		Mascota mascotaseleccionada = mascotaRepo.findById(id).orElse(null);
+	
+		Mascota mascotase= mascotaRepo.getById(id);
+		for (int i=0; i< mascotaRepo.count();i=i+1) {
+			if(pets.get(i).getId() == id) {
+				pet = pets.get(i);
+			}
+		}
+		return pet;
 		
 	}
 	/**

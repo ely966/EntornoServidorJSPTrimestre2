@@ -28,13 +28,13 @@ public class CitaService {
 	  * @param usuario,cita
 	  * @return cita nueva
 	  */
-	public Cita addCita(CredencialesCita cita,User usuario) {
+	public Cita addCita(CredencialesCita cita,User usuario, Long pet) {
 		Cita nuevaCita = new Cita();
 		nuevaCita.setCliente(usuario);
 		nuevaCita.setFecha(cita.getFecha());
 		nuevaCita.setHora(cita.getFecha());
-		Mascota mascota= mascotaServi.encontrarId(cita.getPetid());
-		nuevaCita.setPet(mascota);
+		//nuevaCita.setIdpet(mascotaServi.encontrarId(pet));
+		nuevaCita.setIdpet(pet);
 		nuevaCita.setMotivo(cita.getMotivo());
 		citaRepo.save(nuevaCita);
 		return nuevaCita;
@@ -73,7 +73,7 @@ public class CitaService {
 	 */
 	public Cita delete(User usuario,Cita cita) {
 		/**Eliminamos su union con la mascota**/
-		cita.setPet(null);
+		cita.setIdpet(null);
 		//**Eliminamos su union con cliente**/
 		cita.setCliente(null);
 		//**Guardamos la cita sin uniones**/
@@ -90,8 +90,8 @@ public class CitaService {
 	public void deleteByPet(Long id) {
 		List<Cita>citas=citaRepo.findAll();
 		for (int i=0; citaRepo.count() > i;i=i+1) {
-			if(citas.get(i).getPet().getId() == id) {
-				citas.get(i).setPet(null);
+			if(citas.get(i).getIdpet() == id) {
+				citas.get(i).setIdpet(null);
 				citas.get(i).setCliente(null);
 				citaRepo.save(citas.get(i));
 				citaRepo.deleteById(citas.get(i).getId());
@@ -99,14 +99,15 @@ public class CitaService {
 		}
 	}
 	
-	public Cita editarCita(CreadencialesCitaConId cita,User usuario) {
+	public Cita editarCita(CreadencialesCitaConId cita,User usuario, Long id) {
 		Cita citaEditada = new Cita();
 		citaEditada.setId(cita.getId());
 		citaEditada.setCliente(usuario);
 		citaEditada.setFecha(cita.getFecha());
 		citaEditada.setHora(cita.getFecha());
-		Mascota mascota= mascotaServi.encontrarId(cita.getPetid());
-		citaEditada.setPet(mascota);
+		citaEditada.setIdpet(id);
+		//Mascota mascota= mascotaServi.encontrarId(cita.getPetid());
+		//citaEditada.setIdpet(mascotaServi.encontrarId(cita.getPetid()));
 		citaEditada.setMotivo(cita.getMotivo());
 		citaRepo.save(citaEditada);
 		return citaEditada;

@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeHttpRequests()
         .antMatchers("/auth/**").permitAll()
         .antMatchers("/cliente/**").hasRole("CLIENTE") 
+        .antMatchers("/cliente/mascota/**").hasRole("CLIENTE") 
         /**Todo usuario de rol user puede acceder a lo que este debajo de cliente**/
         .antMatchers("/mascota/**").hasRole("CLIENTE") 
         .and()

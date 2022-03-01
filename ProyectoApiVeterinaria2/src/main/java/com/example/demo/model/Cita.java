@@ -20,6 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,9 +40,8 @@ public class Cita {
 	@JsonBackReference("userCita")  
 	@JoinColumn(name="Cliente")
 	private User cliente;
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="pet")
-	private Mascota pet;
+	//@OneToOne(fetch = FetchType.EAGER)
+	private Long idpet;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@JsonFormat(pattern = "yyyy-MM-dd ", timezone = "GMT+8")
@@ -51,18 +51,18 @@ public class Cita {
 	private String motivo;
 	
 	
-	public Cita(Mascota pet, Date fecha, Time hora, String motivo) {
+	public Cita(Long idpet, Date fecha, Time hora, String motivo) {
 		super();
-		this.pet = pet;
+		this.idpet = idpet;
 		this.fecha = fecha;
 		this.hora = hora;
 		this.motivo = motivo;
 	}
 
 
-	public Cita(Mascota pet, Date fecha, String motivo) {
+	public Cita(Long idpet, Date fecha, String motivo) {
 		super();
-		this.pet = pet;
+		this.idpet = idpet;
 		this.fecha = fecha;
 		this.hora=hora;
 		this.motivo = motivo;

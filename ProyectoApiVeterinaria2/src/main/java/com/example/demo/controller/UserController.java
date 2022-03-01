@@ -32,6 +32,7 @@ import com.example.demo.repository.MascotaRepository;
 import com.example.demo.repository.UserRepo;
 import com.example.demo.service.CitaService;
 import com.example.demo.service.MascotaService;
+import com.example.demo.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -42,6 +43,7 @@ public class UserController {
     @Autowired private MascotaService mascotaServi;
     @Autowired private CitaService citaServi;
     @Autowired private CitasRepository citaRepo;
+    @Autowired private UserService serviUser;
     /**
      * Recoge el token y con este recoge la informacion
      * @return
@@ -50,6 +52,21 @@ public class UserController {
     public User getUserDetails(){
         String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userRepo.findByEmail(email).get();
+    }
+    
+  /**Usuario**/
+    
+    @DeleteMapping("/cliente")
+    public User borrarUsuario(){
+
+        try {
+     	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         User usuario = userRepo.findByEmail(email).get();
+        serviUser.delete(usuario.getId());
+        return usuario;
+        }catch (AuthenticationException authExc){
+            throw new RuntimeException("No tienes permiso o no tienes un usuario con permiso");
+        } 
     }
     
  /**Mascota**/  
@@ -97,6 +114,23 @@ public class UserController {
             if(usuario != null) {
             	 List<Mascota> mascotas =mascotaServi.mostrarMascotadeUser(usuario);
             	 return mascotas;
+            }else {
+            	 throw new IllegalArgumentException("\"El usuario no existe\"");
+            }
+    	}catch (AuthenticationException authExc){
+            throw new RuntimeException("No tienes permiso");
+        }      
+ 
+    }
+    
+    @GetMapping("/cliente/mascota/{id}")
+    public Mascota mascotaporId(@PathVariable Long id){
+    	
+    	try {
+    		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            User usuario = userRepo.findByEmail(email).get();
+            if(usuario != null) {
+            	 return mascotaRepo.getById(id);
             }else {
             	 throw new IllegalArgumentException("\"El usuario no existe\"");
             }
@@ -171,6 +205,10 @@ public class UserController {
         
     }
     
+    
+    
+    
+    
 //**Citas**//
     
     /**
@@ -179,8 +217,8 @@ public class UserController {
      * @return
      * dato extra: falta añadir veterinario
      */
-    @PostMapping("/cliente/cita")
-    public Cita addCita(@RequestBody CredencialesCita cita){
+    @PostMapping("/cliente/mascota/{id}/cita")
+    public Cita addCita(@RequestBody CredencialesCita cita,@PathVariable Long id){
         
         
         try {
@@ -188,9 +226,10 @@ public class UserController {
             User usuario = userRepo.findByEmail(email).get();
         	if(usuario != null) {
         	
-        		Boolean pet= mascotaRepo.existsById(cita.getPetid());
+        		Boolean pet= mascotaRepo.existsById(id);
         			if (pet) {//*Si la mascota existe**/
-        				Cita nuevaCita=citaServi.addCita(cita, usuario);
+        				Mascota mascota = mascotaRepo.getById(id);
+        				Cita nuevaCita=citaServi.addCita(cita, usuario, id);
             	    	//citaRepo.save(nuevaCita);
             	    	List<Cita>citas=citaRepo.findAll();
                 		return nuevaCita;
@@ -265,8 +304,8 @@ public class UserController {
      * @param mascota
      * @return cita editada
      */
-    @PutMapping("/cliente/cita")
-    public Cita editarMascota(@RequestBody CreadencialesCitaConId cita) {
+    @PutMapping("/cliente/mascota/{id}/cita")
+    public Cita editarMascota(@RequestBody CreadencialesCitaConId cita,@PathVariable Long id) {
     	String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User usuario = userRepo.findByEmail(email).get();
     	
@@ -277,7 +316,7 @@ public class UserController {
 			Boolean citaExist = citaRepo.existsById(cita.getId());
 			if (citaExist) {/**Si existe la cita**/
 				
-				return citaServi.editarCita(cita, usuario);
+				return citaServi.editarCita(cita, usuario, id);
 				
 				
 			}else {

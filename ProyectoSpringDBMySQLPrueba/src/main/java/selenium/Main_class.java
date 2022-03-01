@@ -1,3 +1,4 @@
+
 package selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +34,7 @@ public class Main_class {
 			//pulsar el boton
 			usernameBoton.click();
 			
-			Thread.sleep(20000);
+			
 		}catch (InterruptedException e) {
 				e.printStackTrace();
 		}finally {

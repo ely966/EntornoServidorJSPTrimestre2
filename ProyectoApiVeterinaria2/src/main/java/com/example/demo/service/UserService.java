@@ -42,7 +42,11 @@ public class UserService {
 	
 	public User delete (Long id) {
 		if(userRepo.existsById(id)) {
+			
 			User user = userRepo.findById(id).get();
+			user.setMascotas(null);
+			user.setCitas(null);
+			userRepo.save(user);
 			userRepo.deleteById(id);
 			return user;
 		}else {
