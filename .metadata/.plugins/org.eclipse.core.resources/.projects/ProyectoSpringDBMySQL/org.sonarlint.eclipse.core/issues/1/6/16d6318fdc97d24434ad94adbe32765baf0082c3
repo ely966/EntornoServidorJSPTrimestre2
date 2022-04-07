@@ -1,10 +1,0 @@
-
-Œ
-java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ8ÕÐ‡´ç/HƒéRMINORZ
-CODE_SMELL
-o	java:S125"<This block of commented-out lines of code should be removed.(Ã³ªè8´žÝ•å/H‚éRMAJORZ
-CODE_SMELL
-}	java:S114"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Þ´ÿH…éRMINORZ
-CODE_SMELL
-t	java:S125"<This block of commented-out lines of code should be removed.(‰¶´Áýÿÿÿÿ8–ì’µç/HéRMAJORZ
-CODE_SMELL

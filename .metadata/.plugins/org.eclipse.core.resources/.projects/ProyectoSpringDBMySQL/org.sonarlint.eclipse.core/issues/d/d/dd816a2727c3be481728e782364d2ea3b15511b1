@@ -1,17 +1,0 @@
-
-ƒ Web:TableHeaderHasIdOrScopeCheck$";Add either an 'id' or a 'scope' attribute to this <th> tag.(§Ü†ûÿÿÿÿ8«È·Àä/HòÊRMAJORZBUG
-ƒ Web:TableHeaderHasIdOrScopeCheck3";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÉºúÊşÿÿÿÿ8¾Éœå/HñÊRMAJORZBUG
-a	Web:S1827(")Remove this deprecated "width" attribute.(ø’Ù¨üÿÿÿÿ8İ‚—¼æ/HùÊRMAJORZ
-CODE_SMELL
-ƒ Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ŒÉşÅúÿÿÿÿ8«È·Àä/HöÊRMAJORZBUG
-} Web:TableHeaderHasIdOrScopeCheck%";Add either an 'id' or a 'scope' attribute to this <th> tag.(øöÄ"8«È·Àä/HğÊRMAJORZBUG
-ƒ Web:TableHeaderHasIdOrScopeCheck<";Add either an 'id' or a 'scope' attribute to this <th> tag.(¬ «­şÿÿÿÿ8Ë¸¹¼æ/HúÊRMAJORZBUG
-~ Web:TableHeaderHasIdOrScopeCheck ";Add either an 'id' or a 'scope' attribute to this <th> tag.(ŠÔ§8«È·Àä/HõÊRMAJORZBUG
-l	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(ñúº8«È·Àä/HóÊRMAJORZBUG
-~ Web:TableHeaderHasIdOrScopeCheck ";Add either an 'id' or a 'scope' attribute to this <th> tag.(ŠÔ§8Ë¸¹¼æ/HïÊRMAJORZBUG
-} Web:TableHeaderHasIdOrScopeCheck#";Add either an 'id' or a 'scope' attribute to this <th> tag.(…ÖÚU8«È·Àä/HûÊRMAJORZBUG
-~ Web:TableHeaderHasIdOrScopeCheck ";Add either an 'id' or a 'scope' attribute to this <th> tag.(ŠÔ§8«È·Àä/HøÊRMAJORZBUG
-\	Web:S1827")Remove this deprecated "WIDTH" attribute.(°˜¹È8±ä•¼æ/HîÊRMAJORZ
-CODE_SMELL
-ƒ Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(£Åá…üÿÿÿÿ8«È·Àä/H÷ÊRMAJORZBUG
-_Web:TableWithoutCaptionCheck" Add a description to this table.(°˜¹È8«È·Àä/HôÊRMINORZBUG

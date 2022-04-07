@@ -1,13 +1,0 @@
-
-a	Web:S1827")Remove this deprecated "width" attribute.(×Ã¯×üÿÿÿÿ8÷äÕÂæ/HìéRMAJORZ
-CODE_SMELL
-dWeb:TableWithoutCaptionCheck" Add a description to this table.(—Šòºúÿÿÿÿ8ïµÀä/HîéRMINORZBUG
-gWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(•åñ­8œó÷İç/HÊìRMAJORZ
-CODE_SMELL
-\	Web:S1827")Remove this deprecated "width" attribute.(—èÌÎ8œÖÂæ/HééRMAJORZ
-CODE_SMELL
-l	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(ñúº8ïµÀä/HëéRMAJORZBUG
-~ Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(—èÌÎ8ïµÀä/HïéRMAJORZBUG
-ƒ Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(×Ã¯×üÿÿÿÿ8ïµÀä/HêéRMAJORZBUG
-lWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(¹éäÁüÿÿÿÿ8Å¶øİç/HËìRMAJORZ
-CODE_SMELL
